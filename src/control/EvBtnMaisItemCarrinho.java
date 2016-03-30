@@ -2,38 +2,42 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import entity.LivroEntity;
 import entity.AuxQtdadeEntity;
+import entity.ItemCarrinhoEntity;
 
 public class EvBtnMaisItemCarrinho implements ActionListener{
-	private LivroEntity livro;
-	private AuxQtdadeEntity quantidade;
-	private double subTotal;
+	private ItemCarrinhoEntity itemEntity;
+	java.util.List<ItemCarrinhoEntity> itensList;
 	private JButton btn;
 	private JLabel labelQdade;
 	private JLabel lbSubTotal;
 	
-	public EvBtnMaisItemCarrinho(LivroEntity livro, 
-			AuxQtdadeEntity quantidade, double subTotal, JButton btn,
+
+	
+	public EvBtnMaisItemCarrinho(ItemCarrinhoEntity itemEntity, List<ItemCarrinhoEntity> itensList, JButton btn,
 			JLabel labelQdade, JLabel lbSubTotal) {
 		super();
-		this.livro = livro;
-		this.quantidade = quantidade;
-		this.subTotal = subTotal;
+		this.itemEntity = itemEntity;
+		this.itensList = itensList;
 		this.btn = btn;
 		this.labelQdade = labelQdade;
 		this.lbSubTotal = lbSubTotal;
 	}
-	
+
 	public void acao(){
-		quantidade.setQuantidade(quantidade.getQuantidade() + 1);;
-		subTotal = quantidade.getQuantidade() * livro.getPreco();
-		lbSubTotal.setText("" + subTotal);
-		labelQdade.setText("" + quantidade.getQuantidade());
+		this.itemEntity.getQuantidade().setQuantidade(
+				this.itemEntity.getQuantidade().getQuantidade() + 1);
+		this.itemEntity.setSubTotal(
+				this.itemEntity.getQuantidade().getQuantidade() *
+				this.itemEntity.getLivro().getPreco());
+		lbSubTotal.setText("" + this.itemEntity.getSubTotal());
+		labelQdade.setText("" + this.itemEntity.getQuantidade().getQuantidade());
 	}
 	
 	@Override
