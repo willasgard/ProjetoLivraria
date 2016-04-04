@@ -106,17 +106,6 @@ public class CadCliente {
 		
 
 		
-			
-			
-		
-		
-		
-		
-		
-	
-		
-		
-		
 		
 		return panelCentro;
 	}
@@ -130,10 +119,7 @@ public class CadCliente {
 		PanelSul.add(btnDesistirCadastro, BorderLayout.CENTER);
 		
 		JButton btnCadastrar = new JButton("Efetuar Cadastro");
-		PanelSul.add(btnCadastrar, BorderLayout.EAST);
-		
-		
-		
+		PanelSul.add(btnCadastrar, BorderLayout.CENTER);
 		
 		
 		
