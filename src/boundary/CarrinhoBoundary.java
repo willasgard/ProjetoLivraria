@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI.InternalFramePropertyChangeListener;
 
 import control.EvBtnRmItemCarrinho;
 import control.testeEv;
@@ -32,6 +33,7 @@ public class CarrinhoBoundary {
 	private JPanel painelProdutos = new JPanel();
 	private GridLayout gridLayout = new GridLayout(1, 1, 10, 10);
 	private JScrollPane bar = new JScrollPane();
+	private JLabel valorTotal = new JLabel("TOTAL: R$");
 	private java.util.List<ItemCarrinhoEntity> itensList =
 			new ArrayList<ItemCarrinhoEntity>();
 	
@@ -52,8 +54,9 @@ public class CarrinhoBoundary {
 		JButton btnPedido = new JButton("Fechar pedido");
 		btnPedido.setFont(new Font("Tahoma", Font.CENTER_BASELINE, 18));
 		JPanel painelBotao = new JPanel();
-		painelBotao.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		painelBotao.add(btnPedido);
+		painelBotao.setLayout(new BorderLayout());
+		painelBotao.add(valorTotal , BorderLayout.CENTER);
+		painelBotao.add(btnPedido , BorderLayout.EAST);
 		painelPrincipal.add(painelBotao, BorderLayout.SOUTH);
 		
 		JLabel lb1 = new JLabel("");
@@ -94,6 +97,11 @@ public class CarrinhoBoundary {
 		btnPedido.setBorder(BorderFactory.createEmptyBorder());
 		btnPedido.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
+		valorTotal.setForeground(Color.BLUE);
+		valorTotal.setBackground(Color.WHITE);
+		valorTotal.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		valorTotal.setBorder(BorderFactory.createEmptyBorder());
+		valorTotal.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
 		tela.setForeground(Color.WHITE);
 		tela.setBackground(Color.WHITE);
@@ -122,18 +130,25 @@ public class CarrinhoBoundary {
 	}
 	
 	public void adicionaItem(ItemCarrinhoEntity itemEntity){
+		double total = 0;
 		gridLayout.setRows(gridLayout.getRows() + 1);
 		ItemCarrinhoBoundary item =
-				new ItemCarrinhoBoundary(itemEntity, this.itensList);
+				new ItemCarrinhoBoundary(itemEntity, this.itensList, valorTotal);
 		itensList.add(itemEntity);
 		painelProdutos.add(item);
 		
 		EvBtnRmItemCarrinho evBtnRM =
 				new EvBtnRmItemCarrinho(tela, item, painelProdutos, 
-						itensList, itemEntity, bar);
+						itensList, itemEntity, bar, valorTotal);
 		JButton btnTemp = item.getBtnRemover();
 		btnTemp.addActionListener(evBtnRM);
 	
+		for (ItemCarrinhoEntity a : itensList){
+			total += a.getSubTotal();
+		}
+		
+		
+		valorTotal.setText("Total: R$ " + total);
 		bar.repaint();
 		tela.repaint();
 		//tela.setVisible(false);

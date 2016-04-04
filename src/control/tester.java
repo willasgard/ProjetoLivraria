@@ -10,8 +10,8 @@ public class tester {
 		CarrinhoBoundary teste = new CarrinhoBoundary();
 		LivroEntity livro = new LivroEntity();
 	    for (int x = 0; x<8;x++){
-	    	livro.setNome("as leis fundamentais da engenharia de software");
-			livro.setPreco(40);
+	    	livro.setTituloLivro("as leis fundamentais da engenharia de software");
+			livro.setPrecoVenda(40);
 			AuxQtdadeEntity qtdade = new AuxQtdadeEntity();
 			qtdade.setQuantidade(5);
 			ItemCarrinhoEntity entity = new ItemCarrinhoEntity();

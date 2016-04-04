@@ -34,15 +34,18 @@ public class ItemCarrinhoBoundary extends JPanel{
 	private AuxQtdadeEntity quantidade;
 	private double subTotal;
 	JButton btnRemover = new JButton("");
+	private JLabel valorTotal;
 	
 	public ItemCarrinhoBoundary(ItemCarrinhoEntity itemEntity,
-			java.util.List<ItemCarrinhoEntity> itensList) {
+			java.util.List<ItemCarrinhoEntity> itensList,
+			JLabel valorTotal) {
 		super();
 		this.itemEntity = itemEntity;
 		this.itensList = itensList;
 		this.livro = itemEntity.getLivro();
 		this.quantidade = itemEntity.getQuantidade();
 		this.subTotal = itemEntity.getSubTotal();
+		this.valorTotal = valorTotal;
 		this.create();	
 	}
 
@@ -66,11 +69,11 @@ public class ItemCarrinhoBoundary extends JPanel{
 		this.setLayout(gridLayout);
 		JLabel imagem = new JLabel("");
 		imagem.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resource/livro.png")));
-		JTextArea nomeLivro = new JTextArea(livro.getNome());
+		JTextArea nomeLivro = new JTextArea(livro.getTituloLivro());
 		nomeLivro.setLineWrap(true);
 		nomeLivro.setEditable(false);
 		//JLabel nomeLivro = new JLabel(livro.getNome());
-		JLabel preco = new JLabel("R$ " + livro.getPreco());
+		JLabel preco = new JLabel("R$ " + livro.getPrecoVenda());
 		JLabel lbSubTotal = new JLabel("R$ " + this.subTotal);
 		JPanel painelQtdade = new JPanel();
 		nomeLivro.setToolTipText(nomeLivro.getText());
@@ -156,12 +159,12 @@ public class ItemCarrinhoBoundary extends JPanel{
 		
 		EvBtnMaisItemCarrinho evBtnMais =
 				new EvBtnMaisItemCarrinho(itemEntity, itensList, btnMais,
-						labelQdade, lbSubTotal);
+						labelQdade, lbSubTotal, valorTotal);
 		btnMais.addActionListener(evBtnMais);
         
 		EvBtnMenosItemCarrinho evBtnMenos =
 				new EvBtnMenosItemCarrinho(itemEntity, itensList, btnMenos,
-						labelQdade, lbSubTotal);
+						labelQdade, lbSubTotal, valorTotal);
 		btnMenos.addActionListener(evBtnMenos);
 	}
 	

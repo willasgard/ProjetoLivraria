@@ -16,8 +16,8 @@ public class ItemCarrinhoEntity {
 		super();
 		this.livro = new LivroEntity();
 		this.quantidade = new AuxQtdadeEntity();
-		this.livro.setNome("");
-		this.livro.setPreco(0);
+		this.livro.setTituloLivro("");
+		this.livro.setPrecoVenda(0);
 		this.quantidade.setQuantidade(0);
 	}
 	public ImageIcon getImagem() {
@@ -31,14 +31,14 @@ public class ItemCarrinhoEntity {
 	}
 	public void setLivro(LivroEntity livro) {
 		this.livro = livro;
-		this.subTotal = livro.getPreco() * quantidade.getQuantidade();
+		this.subTotal = livro.getPrecoVenda() * quantidade.getQuantidade();
 	}
 	public AuxQtdadeEntity getQuantidade() {
 		return quantidade;
 	}
 	public void setQuantidade(AuxQtdadeEntity quantidade) {
 		this.quantidade = quantidade;
-		this.subTotal = livro.getPreco() * quantidade.getQuantidade();
+		this.subTotal = livro.getPrecoVenda() * quantidade.getQuantidade();
 	}
 	public double getSubTotal() {
 		return subTotal;
@@ -48,7 +48,7 @@ public class ItemCarrinhoEntity {
 	}
 	@Override
 	public String toString() {
-		return "ItemCarrinhoEntity [imagem=" + imagem + ", livro=" + livro.getNome() + 
+		return "ItemCarrinhoEntity [imagem=" + imagem + ", livro=" + livro.getTituloLivro() + 
 				", quantidade=" + quantidade.getQuantidade()
 				+ ", subTotal=" + subTotal + "]";
 	}

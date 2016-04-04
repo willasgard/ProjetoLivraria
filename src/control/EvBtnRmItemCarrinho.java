@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -21,12 +22,13 @@ public class EvBtnRmItemCarrinho implements ActionListener{
 			new ArrayList<ItemCarrinhoEntity>();
 	private ItemCarrinhoEntity itemEntity;
 	private JScrollPane bar;
+	private JLabel valorTotal;
 	
 	public EvBtnRmItemCarrinho(JFrame tela,
 			ItemCarrinhoBoundary item, JPanel painel,
 			List<ItemCarrinhoEntity> itensList,
 			ItemCarrinhoEntity itemEntity,
-			JScrollPane bar) {
+			JScrollPane bar, JLabel valorTotal) {
 		super();
 		this.tela = tela;
 		this.item = item;
@@ -34,9 +36,11 @@ public class EvBtnRmItemCarrinho implements ActionListener{
 		this.itensList = itensList;
 		this.itemEntity = itemEntity;
 		this.bar = bar;
+		this.valorTotal = valorTotal;
 	}
 
 	public void acao(){
+		double total = 0;
 		painel.remove(item);
 		itensList.remove(itemEntity);
 		bar.invalidate();
@@ -44,8 +48,12 @@ public class EvBtnRmItemCarrinho implements ActionListener{
 		tela.repaint();
 		painel.repaint();
 
-		//tela.setVisible(false);
-		//tela.setVisible(true);
+		for (ItemCarrinhoEntity a : itensList){
+			total += a.getSubTotal();
+		}
+		
+		
+		valorTotal.setText("Total: R$ " + total);	
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
