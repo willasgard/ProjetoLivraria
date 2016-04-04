@@ -31,7 +31,7 @@ public class CarrinhoBoundary {
 	private JPanel painelPrincipal = new JPanel();
 	private JPanel painelProdutos = new JPanel();
 	private GridLayout gridLayout = new GridLayout(1, 1, 10, 10);
-	JScrollPane bar = new JScrollPane();
+	private JScrollPane bar = new JScrollPane();
 	private java.util.List<ItemCarrinhoEntity> itensList =
 			new ArrayList<ItemCarrinhoEntity>();
 	
@@ -46,17 +46,15 @@ public class CarrinhoBoundary {
 		tela.setVisible(true);
 		//
 		JLabel carrinho = new JLabel("");
-		carrinho.setIcon(new ImageIcon(CarrinhoBoundary.class.getResource("/resourse/carrinho.png")));
-		painelPrincipal.add(carrinho, BorderLayout.NORTH);
+		carrinho.setIcon(new ImageIcon(CarrinhoBoundary.class.getResource("/resource/carrinho.png")));
+		
 		//
-		JButton btnPedido = new JButton("gerar pedido");
+		JButton btnPedido = new JButton("Fechar pedido");
+		btnPedido.setFont(new Font("Tahoma", Font.CENTER_BASELINE, 18));
 		JPanel painelBotao = new JPanel();
 		painelBotao.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		painelBotao.add(btnPedido);
 		painelPrincipal.add(painelBotao, BorderLayout.SOUTH);
-		
-		testeEv evteste = new testeEv(itensList, btnPedido);
-		btnPedido.addActionListener(evteste);
 		
 		JLabel lb1 = new JLabel("");
 		JLabel lb2 = new JLabel("Item");
@@ -80,24 +78,47 @@ public class CarrinhoBoundary {
 		lb4.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lb5.setFont(new Font("Tahoma", Font.BOLD, 18));
 		JPanel painelIndice = new JPanel();
-		painelIndice.setLayout(new GridLayout(1, 6, 10, 10));
-		painelIndice.add(lb1);
+		painelIndice.setLayout(new GridLayout(1, 7, 10, 10));
+		painelIndice.add(carrinho);
 		painelIndice.add(lb2);
 		painelIndice.add(lb3);
 		painelIndice.add(lb4);
 		painelIndice.add(lb5);
 		painelIndice.add(lb6);
-		painelProdutos.add(painelIndice);
+		painelPrincipal.add(painelIndice, BorderLayout.NORTH);
 		
-		btnPedido.setForeground(Color.WHITE);
-		btnPedido.setBackground(Color.GREEN);
+		
+		btnPedido.setForeground(Color.BLACK);
+		btnPedido.setBackground(Color.WHITE);
 		btnPedido.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnPedido.setBorder(BorderFactory.createEmptyBorder());
 		btnPedido.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
+		
+		tela.setForeground(Color.WHITE);
+		tela.setBackground(Color.WHITE);
+		
+		painelPrincipal.setForeground(Color.WHITE);
+		painelPrincipal.setBackground(Color.WHITE);
+		painelPrincipal.setBorder(BorderFactory.createEmptyBorder());
+		
+		painelProdutos.setForeground(Color.WHITE);
+		painelProdutos.setBackground(Color.WHITE);
+		painelProdutos.setBorder(BorderFactory.createEmptyBorder());
+		
+		painelIndice.setForeground(Color.WHITE);
+		painelIndice.setBackground(Color.WHITE);
+		painelIndice.setBorder(BorderFactory.createEmptyBorder());
+		
+		painelBotao.setForeground(Color.WHITE);
+		painelBotao.setBackground(Color.WHITE);
+		painelBotao.setBorder(BorderFactory.createEmptyBorder());
+		
 		painelPrincipal.add(bar, BorderLayout.CENTER);
 		bar.setViewportView(painelProdutos);
-	
+
+		testeEv evteste = new testeEv(itensList, btnPedido);
+		btnPedido.addActionListener(evteste);
 	}
 	
 	public void adicionaItem(ItemCarrinhoEntity itemEntity){
@@ -109,13 +130,14 @@ public class CarrinhoBoundary {
 		
 		EvBtnRmItemCarrinho evBtnRM =
 				new EvBtnRmItemCarrinho(tela, item, painelProdutos, 
-						itensList, itemEntity);
+						itensList, itemEntity, bar);
 		JButton btnTemp = item.getBtnRemover();
 		btnTemp.addActionListener(evBtnRM);
 	
 		bar.repaint();
-		tela.setVisible(false);
-		tela.setVisible(true);
+		tela.repaint();
+		//tela.setVisible(false);
+		//tela.setVisible(true);
 		
 	}
 	
