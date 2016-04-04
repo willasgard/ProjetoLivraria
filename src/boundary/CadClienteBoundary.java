@@ -18,10 +18,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-public class CadCliente {
+public class CadClienteBoundary {
 	
 	
-	public CadCliente() {
+	public CadClienteBoundary() {
 		// TODO Auto-generated constructor stub
 	JFrame janela = new JFrame("Cadastro de Cliente");
 	JPanel painel = new JPanel(new BorderLayout());
@@ -136,7 +136,7 @@ public class CadCliente {
 	
 	public static void main(String[] args) {
 		
-		new CadCliente();
+		new CadClienteBoundary();
 	}
 	
 
