@@ -46,10 +46,11 @@ public class CarrinhoBoundary {
 		tela.setVisible(true);
 		//
 		JLabel carrinho = new JLabel("");
-		carrinho.setIcon(new ImageIcon(CarrinhoBoundary.class.getResource("/resourse/carrinho.png")));
+		carrinho.setIcon(new ImageIcon(CarrinhoBoundary.class.getResource("/resource/carrinho.png")));
 		
 		//
-		JButton btnPedido = new JButton("gerar pedido");
+		JButton btnPedido = new JButton("Fechar pedido");
+		btnPedido.setFont(new Font("Tahoma", Font.CENTER_BASELINE, 18));
 		JPanel painelBotao = new JPanel();
 		painelBotao.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		painelBotao.add(btnPedido);

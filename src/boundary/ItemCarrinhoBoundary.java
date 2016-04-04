@@ -65,7 +65,7 @@ public class ItemCarrinhoBoundary extends JPanel{
 		GridLayout gridLayout = new GridLayout(1, 6, 5, 5);
 		this.setLayout(gridLayout);
 		JLabel imagem = new JLabel("");
-		imagem.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resourse/livro.png")));
+		imagem.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resource/livro.png")));
 		JTextArea nomeLivro = new JTextArea(livro.getNome());
 		nomeLivro.setLineWrap(true);
 		nomeLivro.setEditable(false);
@@ -109,7 +109,7 @@ public class ItemCarrinhoBoundary extends JPanel{
 		btnRemover.setBackground(Color.WHITE);
 		btnRemover.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnRemover.setBorder(BorderFactory.createEmptyBorder());
-		btnRemover.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resourse/trash.png")));
+		btnRemover.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resource/trash.png")));
 		
 		
 		btnMais.setForeground(Color.GREEN);
