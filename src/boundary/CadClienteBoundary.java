@@ -1,10 +1,12 @@
 package boundary;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.PageAttributes;
 import java.awt.Panel;
 import java.util.Vector;
 
@@ -14,9 +16,11 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.JScrollBar;
 
 public class CadClienteBoundary {
 	
@@ -24,15 +28,22 @@ public class CadClienteBoundary {
 	public CadClienteBoundary() {
 		// TODO Auto-generated constructor stub
 	JFrame janela = new JFrame("Cadastro de Cliente");
-	JPanel painel = new JPanel(new BorderLayout());
+	JPanel panel = new JPanel(new BorderLayout());
 	
-	painel.add(Norte(), BorderLayout.NORTH);
-	painel.add(Centro(),BorderLayout.CENTER);
-	painel.add(Sul(),BorderLayout.SOUTH);
+		
+	panel.add(Norte(), BorderLayout.NORTH);
+	panel.add(Centro(),BorderLayout.CENTER);
+	panel.add(Sul(),BorderLayout.SOUTH);
+	//panel.add(Esquerdo(), BorderLayout.WEST);
 	
-	janela.setContentPane(painel);
+	
+	
+	janela.setContentPane(panel);
+	
+	JScrollBar scrollBar = new JScrollBar();
+	panel.add(scrollBar, BorderLayout.EAST);
 	janela.setVisible(true);
-	janela.setSize(800, 400);
+	janela.setSize(1000, 600);
 	janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 	}
@@ -40,6 +51,7 @@ public class CadClienteBoundary {
 	
 	public JComponent Norte (){
 		JPanel panelNorte = new JPanel(new BorderLayout());
+		panelNorte.setBackground(Color.WHITE);
 		JLabel txtTitulo = new JLabel("Identificação - Faça seu cadastro");
 		txtTitulo.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		JLabel txtLogin = new JLabel("Já tem cadastro? Faça o login");
@@ -52,7 +64,10 @@ public class CadClienteBoundary {
 		
 	}
 	public JComponent Centro(){
-		JPanel panelCentro = new JPanel(new GridLayout(8,2));
+		JPanel panelCentro = new JPanel(new GridLayout(15,1));
+		
+		panelCentro.setBackground(Color.WHITE);
+		
 		
 		JLabel txtNome = new JLabel("*Nome Completo: ");
 		panelCentro.add(txtNome);
@@ -69,13 +84,19 @@ public class CadClienteBoundary {
 		JTextField RG = new JTextField(10);
 		panelCentro.add(RG);
 		
-		JLabel lblEndereco = new JLabel("Endereço: ");
+		
+		JLabel lblEndereco = new JLabel("*Endereço: ");
 		panelCentro.add(lblEndereco);
 		JTextField Endereco = new JTextField(30);
 		panelCentro.add(Endereco);
+
+		JLabel lblBairro = new JLabel("*Bairro: ");
+		panelCentro.add(lblBairro);
+		JTextField Bairro = new JTextField(30);
+		panelCentro.add(Bairro);
 		
 		
-		JLabel lblSexo = new JLabel("Sexo");
+		JLabel lblSexo = new JLabel("*Sexo");
 		panelCentro.add(lblSexo);
 		JComboBox cbSexo = new JComboBox();
 		Vector Sexo = new Vector();
@@ -87,21 +108,42 @@ public class CadClienteBoundary {
 		}
 		panelCentro.add(cbSexo);
 		
-		JLabel lblEmail = new JLabel("Email: ");
+		JLabel lblEmail = new JLabel("*Email: ");
 		panelCentro.add(lblEmail);
 		JTextField Email = new JTextField(30);
 		panelCentro.add(Email);
 		
 		
-		JLabel lblTelefone = new JLabel("Telefone: ");
+		JLabel lblTelefone = new JLabel("*Telefone: ");
 		panelCentro.add(lblTelefone);
 		JTextField Telefone = new JTextField(10);
 		panelCentro.add(Telefone);
 		
-		JLabel lblCelular = new JLabel("Celular: ");
+		JLabel lblCelular = new JLabel("*Celular: ");
 		panelCentro.add(lblCelular);
 		JTextField Celular = new JTextField(10);
 		panelCentro.add(Celular);
+		
+		JLabel lblCEP = new JLabel("*CEP: ");
+		panelCentro.add(lblCEP);
+		JTextField CEP = new JTextField(10);
+		panelCentro.add(CEP);
+		
+		JLabel lblUF = new JLabel("*UF");
+		panelCentro.add(lblUF);
+		JComboBox cbUF = new JComboBox();
+		Vector UF = new Vector();
+		UF.add("SP");
+		UF.add("RJ");
+		UF.add("MG");
+		UF.add("BA");
+		UF.add("MT");
+		
+		for (int i=0;i<UF.size();i++){
+			cbUF.addItem(UF.get(i));
+		}
+		panelCentro.add(cbUF);
+
 		
 		
 
@@ -110,17 +152,29 @@ public class CadClienteBoundary {
 		return panelCentro;
 	}
 	
+	public JComponent Esquerdo(){
+		
+		JPanel panelEsquerdo = new JPanel(new FlowLayout());
+		panelEsquerdo.setBackground(Color.WHITE);
+		JLabel myAcc = new JLabel("Minha Conta");
+		
+		panelEsquerdo.add(myAcc);
+		
+		
+		
+		
+		return panelEsquerdo; 
+	}
 	
 	public JComponent Sul (){
 		JPanel PanelSul = new JPanel();
-		PanelSul.setLayout(new FlowLayout());
+		PanelSul.setBackground(Color.WHITE);
+		PanelSul.setLayout(new BorderLayout());
 		
-		JButton btnDesistirCadastro = new JButton("Desistir do Cadastro");
-		PanelSul.add(btnDesistirCadastro, BorderLayout.CENTER);
-		
-		JButton btnCadastrar = new JButton("Efetuar Cadastro");
-		PanelSul.add(btnCadastrar, BorderLayout.CENTER);
-		
+		JButton btnCadastrar = new JButton("Concluir Cadastro");
+		PanelSul.add(btnCadastrar, BorderLayout.EAST);
+		btnCadastrar.setBackground(Color.GREEN);
+		btnCadastrar.setForeground(Color.WHITE);
 		
 		
 		
