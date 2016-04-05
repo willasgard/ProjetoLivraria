@@ -16,11 +16,11 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
-import javax.swing.JScrollBar;
+
 
 public class CadClienteBoundary {
 	
@@ -40,8 +40,8 @@ public class CadClienteBoundary {
 	
 	janela.setContentPane(panel);
 	
-	JScrollBar scrollBar = new JScrollBar();
-	panel.add(scrollBar, BorderLayout.EAST);
+	
+	
 	janela.setVisible(true);
 	janela.setSize(1000, 600);
 	janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +64,7 @@ public class CadClienteBoundary {
 		
 	}
 	public JComponent Centro(){
-		JPanel panelCentro = new JPanel(new GridLayout(15,1));
+		JPanel panelCentro = new JPanel(new GridLayout(12,1,10,10));
 		
 		panelCentro.setBackground(Color.WHITE);
 		
@@ -100,12 +100,18 @@ public class CadClienteBoundary {
 		panelCentro.add(lblSexo);
 		JComboBox cbSexo = new JComboBox();
 		Vector Sexo = new Vector();
+		Sexo.add("");
 		Sexo.add("Masculino");
 		Sexo.add("Feminino");
 		Sexo.add("Não informado");
 		for (int i=0;i<Sexo.size();i++){
 			cbSexo.addItem(Sexo.get(i));
+			
 		}
+		
+		
+		
+		
 		panelCentro.add(cbSexo);
 		
 		JLabel lblEmail = new JLabel("*Email: ");
@@ -133,6 +139,8 @@ public class CadClienteBoundary {
 		panelCentro.add(lblUF);
 		JComboBox cbUF = new JComboBox();
 		Vector UF = new Vector();
+		
+		UF.add("");
 		UF.add("SP");
 		UF.add("RJ");
 		UF.add("MG");
@@ -142,6 +150,8 @@ public class CadClienteBoundary {
 		for (int i=0;i<UF.size();i++){
 			cbUF.addItem(UF.get(i));
 		}
+		
+		
 		panelCentro.add(cbUF);
 
 		
