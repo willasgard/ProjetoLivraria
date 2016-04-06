@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import control.LivroEvBtnSalvar;
+
 import entity.LivroEntity;
 
 public class LivroBoundary {
