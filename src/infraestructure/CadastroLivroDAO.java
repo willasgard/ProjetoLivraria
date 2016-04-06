@@ -18,11 +18,11 @@ public class CadastroLivroDAO {
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-			stmt.setInt(1, livro.getNomeAutor());
-			stmt.setInt(2, livro.getEditora());
-			stmt.setInt(3, livro.getEditora());
-			stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
-			stmt.setInt(5, livro.getFormato());
+			stmt.setString(1, livro.getNomeAutor());
+			stmt.setString(2, livro.getEditora());
+			stmt.setString(3, livro.getEditora());
+			stmt.setString(4,livro.getDataPublicacao());
+			stmt.setString(5, livro.getFormato());
 			stmt.setInt(6, livro.getIsbn());
 			stmt.setDouble(7, livro.getMargemLucro());
 			stmt.setInt(8, livro.getNumeroPaginas());
@@ -59,11 +59,11 @@ public class CadastroLivroDAO {
 			
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-			stmt.setInt(1, livro.getNomeAutor());
-			stmt.setInt(2, livro.getEditora());
-			stmt.setInt(3, livro.getEditora());
-			stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
-			stmt.setInt(5, livro.getFormato());
+			stmt.setString(1, livro.getNomeAutor());
+			stmt.setString(2, livro.getEditora());
+			stmt.setString(3, livro.getEditora());
+			stmt.setString(4,livro.getDataPublicacao());
+			stmt.setString(5, livro.getFormato());
 			stmt.setInt(6, livro.getIsbn());
 			stmt.setDouble(7, livro.getMargemLucro());
 			stmt.setInt(8, livro.getNumeroPaginas());
@@ -119,11 +119,11 @@ public class CadastroLivroDAO {
 
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				stmt.setInt(1, livro.getNomeAutor());
-				stmt.setInt(2, livro.getEditora());
-				stmt.setInt(3, livro.getEditora());
-				stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
-				stmt.setInt(5, livro.getFormato());
+				stmt.setString(1, livro.getNomeAutor());
+				stmt.setString(2, livro.getEditora());
+				stmt.setString(3, livro.getEditora());
+				stmt.setString(4,livro.getDataPublicacao());
+				stmt.setString(5, livro.getFormato());
 				stmt.setInt(6, livro.getIsbn());
 				stmt.setDouble(7, livro.getMargemLucro());
 				stmt.setInt(8, livro.getNumeroPaginas());
@@ -156,11 +156,11 @@ public class CadastroLivroDAO {
 			while (rs.next()) {
 				LivroEntity livro = new LivroEntity();
 				
-				stmt.setInt(1, livro.getNomeAutor());
-				stmt.setInt(2, livro.getEditora());
-				stmt.setInt(3, livro.getEditora());
-				stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
-				stmt.setInt(5, livro.getFormato());
+				stmt.setString(1, livro.getNomeAutor());
+				stmt.setString(2, livro.getEditora());
+				stmt.setString(3, livro.getEditora());
+				stmt.setString(4,livro.getDataPublicacao());
+				stmt.setString(5, livro.getFormato());
 				stmt.setInt(6, livro.getIsbn());
 				stmt.setDouble(7, livro.getMargemLucro());
 				stmt.setInt(8, livro.getNumeroPaginas());
@@ -196,11 +196,11 @@ public class CadastroLivroDAO {
 				
 				LivroEntity livro = new LivroEntity();
 				
-				stmt.setInt(1, livro.getNomeAutor());
-				stmt.setInt(2, livro.getEditora());
-				stmt.setInt(3, livro.getEditora());
-				stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
-				stmt.setInt(5, livro.getFormato());
+				stmt.setString(1, livro.getNomeAutor());
+				stmt.setString(2, livro.getEditora());
+				stmt.setString(3, livro.getEditora());
+				stmt.setString(4,livro.getDataPublicacao());
+				stmt.setString(5, livro.getFormato());
 				stmt.setInt(6, livro.getIsbn());
 				stmt.setDouble(7, livro.getMargemLucro());
 				stmt.setInt(8, livro.getNumeroPaginas());
@@ -234,11 +234,11 @@ public class CadastroLivroDAO {
 				
 				LivroEntity livro = new LivroEntity();
 				
-				stmt.setInt(1, livro.getNomeAutor());
-				stmt.setInt(2, livro.getEditora());
-				stmt.setInt(3, livro.getEditora());
-				stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
-				stmt.setInt(5, livro.getFormato());
+				stmt.setString(1, livro.getNomeAutor());
+				stmt.setString(2, livro.getEditora());
+				stmt.setString(3, livro.getEditora());
+				stmt.setString(4,livro.getDataPublicacao());
+				stmt.setString(5, livro.getFormato());
 				stmt.setInt(6, livro.getIsbn());
 				stmt.setDouble(7, livro.getMargemLucro());
 				stmt.setInt(8, livro.getNumeroPaginas());

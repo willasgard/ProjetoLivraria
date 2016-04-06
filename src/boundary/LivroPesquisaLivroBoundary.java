@@ -1,5 +1,11 @@
 package boundary;
 
-public class LivroPesquisaLivroBoundary {
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+
+public class LivroPesquisaLivroBoundary extends JDialog {
+	
+	private JPanel contentPane;
+	
 
 }
