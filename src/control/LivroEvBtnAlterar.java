@@ -2,7 +2,6 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.chrono.JapaneseDate;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComboBox;
@@ -65,15 +64,15 @@ public class LivroEvBtnAlterar implements ActionListener {
 		livro.setNomeAutor(comboAutor.getSelectedItem().toString());
 		livro.setCategoriaLivro(comboCategoriaLivro.getSelectedItem().toString());
 		livro.setEditora(comboEditora.getSelectedItem().toString());
-		livro.setDataPublicacao(dataPublicacao.getDate());
+//		livro.setDataPublicacao(dataPublicacao.getDate());
 		livro.setFormato(comboFormato.getSelectedItem().toString());
 		livro.setNumeroPaginas(txtnumPaginas.getRows());
 		livro.setSumario(txtSumario.getText());
 		livro.setResumo(txtResumo.getText());
-		livro.setPrecoCusto(txtPrecoCusto.getText());
-		livro.setPrecoVenda(txtPrecoVenda.getText());
-		livro.setMargemLucro(txtMargemLucro.getText());
-		livro.setQtdeEmEstoque(txtQtdeEmEstoque.getText());
+	//	livro.setPrecoCusto(txtPrecoCusto.getText());
+	//	livro.setPrecoVenda(txtPrecoVenda.getText());
+	//	livro.setMargemLucro(txtMargemLucro.getText());
+	//	livro.setQtdeEmEstoque(txtQtdeEmEstoque.getText());
 		
 		try {
 			if (livroDao.update(livro) > 0){

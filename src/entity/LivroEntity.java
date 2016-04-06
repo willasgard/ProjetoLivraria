@@ -19,6 +19,10 @@ public class LivroEntity {
 	private double margemLucro;
 	private int qtdeEmEstoque;
 	
+	public LivroEntity(){
+		
+	}
+	
 	public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
 			String categoriaLivro, String editora, String dataPublicacao,
 			String formato, int numeroPaginas, String sumario, String resumo,
