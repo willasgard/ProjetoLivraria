@@ -14,7 +14,6 @@ import entity.LivroEntity;
 public class tester {
 	public static void main(String[] args) {
 		/*CarrinhoBoundary teste = new CarrinhoBoundary();
-		LivroEntity livro = new LivroEntity();
 	    for (int x = 0; x<8;x++){
 	    	livro.setTituloLivro("as leis fundamentais da engenharia de software" + x);
 			livro.setPrecoVenda(40);
@@ -25,12 +24,17 @@ public class tester {
 			entity.setQuantidade(qtdade);
 			teste.adicionaItem(entity);
 	    }*/
-		ItemPesquisaBoundary teste = new ItemPesquisaBoundary(
-        		new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resource/livro.png"))
-        		, "as aventuras de timtim", "dan brown", 100.0);
+		LivroEntity livro = new LivroEntity();
+		livro.setNomeAutor("bezerra");
+		livro.setTituloLivro("tecnicas de uml");
+		livro.setPrecoVenda(300.0);
+		livro.setImagem(
+				new ImageIcon(CarrinhoBoundary.class.getResource("/resource/livro.png"))		
+				);
+		ItemPesquisaBoundary teste = new ItemPesquisaBoundary(livro);
 		JFrame frame = new JFrame("teste");
 		frame.setContentPane(teste);
-		frame.setSize(200,200);
+		frame.setSize(900,200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}

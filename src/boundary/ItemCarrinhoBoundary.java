@@ -68,7 +68,7 @@ public class ItemCarrinhoBoundary extends JPanel{
 		GridLayout gridLayout = new GridLayout(1, 6, 5, 5);
 		this.setLayout(gridLayout);
 		JLabel imagem = new JLabel("");
-		imagem.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resource/livro.png")));
+		imagem.setIcon(livro.getImagem());
 		JTextArea nomeLivro = new JTextArea(livro.getTituloLivro());
 		nomeLivro.setLineWrap(true);
 		nomeLivro.setEditable(false);
