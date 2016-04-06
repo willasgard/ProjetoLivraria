@@ -19,11 +19,15 @@ public class LivroEntity {
 	private double margemLucro;
 	private int qtdeEmEstoque;
 	
+<<<<<<< 739e7adc1b73d22dbc0ec92041f2d58e36fd461e
 	public LivroEntity(){
 		
 	}
 	
 	public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
+=======
+	/*public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
+>>>>>>> Cadastro do Livro: CRUD e tela concluídos. Necessita de pequenos
 			String categoriaLivro, String editora, String dataPublicacao,
 			String formato, int numeroPaginas, String sumario, String resumo,
 			double precoCusto, double precoVenda, double margemLucro,
@@ -43,7 +47,8 @@ public class LivroEntity {
 		this.precoVenda = precoVenda;
 		this.margemLucro = margemLucro;
 		this.qtdeEmEstoque = qtdeEmEstoque;
-	}
+	}*/
+
 
 	public int getIsbn() {
 		return isbn;

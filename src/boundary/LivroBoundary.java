@@ -21,7 +21,13 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
+<<<<<<< 739e7adc1b73d22dbc0ec92041f2d58e36fd461e
 
+=======
+import control.LivroEvBtnAlterar;
+import control.LivroEvBtnDeletar;
+import control.LivroEvBtnSalvar;
+>>>>>>> Cadastro do Livro: CRUD e tela conclu√≠dos. Necessita de pequenos
 import entity.LivroEntity;
 
 public class LivroBoundary {
@@ -31,6 +37,10 @@ public class LivroBoundary {
 	private JFrame frame = new JFrame();
 	private JPanel contentPane;
 	
+<<<<<<< 739e7adc1b73d22dbc0ec92041f2d58e36fd461e
+=======
+	
+>>>>>>> Cadastro do Livro: CRUD e tela conclu√≠dos. Necessita de pequenos
 	private JTextField txtTituloLivro;
 	private JTextField txtISBN;
 	private JTextField txtNomeAutor;
@@ -202,6 +212,7 @@ public class LivroBoundary {
 		contentPane.add(BtnVoltar);
 		
 		
+<<<<<<< 739e7adc1b73d22dbc0ec92041f2d58e36fd461e
 		/*
 		 * Adicionar evento ao bot„o salvar
 		*/
@@ -226,6 +237,26 @@ public class LivroBoundary {
 		/*
 		 * Adicionar evento ao bot„o voltar
 		*/
+=======
+		LivroEvBtnSalvar evtSalvar = new LivroEvBtnSalvar(this, txtTituloLivro, txtISBN, txtNomeAutor, txtDataPublicacao,
+															txtEditora, txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo,
+															txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque);
+		bntSalvar.addActionListener(evtSalvar);
+		
+		
+		
+		LivroEvBtnAlterar evtAlterar = new LivroEvBtnAlterar(this, txtTituloLivro, txtISBN, txtNomeAutor, txtDataPublicacao, txtEditora,
+															txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo, 
+															txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque);
+		bntAlterar.addActionListener(evtAlterar);		
+		
+		
+		
+		LivroEvBtnDeletar evtDeletar = new LivroEvBtnDeletar(this);
+		BtnVoltar.addActionListener(evtAlterar);
+		
+		
+>>>>>>> Cadastro do Livro: CRUD e tela conclu√≠dos. Necessita de pequenos
 	}
 	
 	public void telaDefault(){
