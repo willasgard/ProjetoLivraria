@@ -10,44 +10,43 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import com.toedter.calendar.JDateChooser;
-
 import entity.LivroEntity;
 import boundary.LivroBoundary;
 import infraestructure.CadastroLivroDAO;
 
 public class LivroEvBtnAlterar implements ActionListener {
 	
-	//estou em dúvida com esta parte quanto aos tipos   ##############falta o ISBN
 	private LivroBoundary TelaLivro;
 	private JTextField txtTituloLivro;
-	private JComboBox comboAutor;
-	private JComboBox comboCategoriaLivro;
-	private JComboBox comboEditora;
-	private JDateChooser dataPublicacao;
-	private JComboBox comboFormato;
-	private JTextArea txtnumPaginas;	
-	private JTextArea txtSumario;
-	private JTextArea txtResumo;
-	private JTextArea txtPrecoCusto;
-	private JTextArea txtPrecoVenda;
-	private JTextArea txtMargemLucro;
-	private JTextArea txtQtdeEmEstoque;
+	private JTextField txtISBN;
+	private JTextField txtNomeAutor;
+	private JTextField txtDataPublicacao;
+	private JTextField txtEditora;
+	private JTextField txtCategoria;
+	private JTextField txtFormato;
+	private JTextField txtnumPaginas;	
+	private JTextField txtSumario;
+	private JTextField txtResumo;
+	private JTextField txtPrecoCusto;
+	private JTextField txtPrecoVenda;
+	private JTextField txtMargemLucro;
+	private JTextField txtQtdeEmEstoque;
 	
 	
-	public LivroEvBtnAlterar (LivroBoundary telaLivro, JTextField txtTituloLivro, JComboBox comboAutor, JComboBox comboCategoriaLivro,  
-			JComboBox comboEditora, JDateChooser dataPublicacao, JComboBox comboFormato, JTextArea txtnumPaginas, JTextArea txtSumario,
-			JTextArea txtResumo, JTextArea txtPrecoCusto, JTextArea txtPrecoVenda, JTextArea txtMargemLucro, JTextArea txtQtdeEmEstoque){
-		
+	public LivroEvBtnAlterar (LivroBoundary telaLivro, JTextField txtTituloLivro, JTextField txtISBN, JTextField txtNomeAutor,
+							  JTextField txtDataPublicacao, JTextField txtEditora, JTextField txtCategoria,
+							  JTextField txtFormato, JTextField txtnumPaginas, JTextField txtSumario,
+							  JTextField txtResumo,	JTextField txtPrecoCusto, JTextField txtPrecoVenda,
+							  JTextField txtMargemLucro, JTextField txtQtdeEmEstoque){
 		super();
-		
 		this.TelaLivro = telaLivro;
 		this.txtTituloLivro = txtTituloLivro;
-		this.comboAutor = comboAutor;
-		this.comboCategoriaLivro = comboCategoriaLivro;
-		this.comboEditora = comboEditora;
-		this.dataPublicacao = dataPublicacao;
-		this.comboFormato = comboFormato;
+		this.txtISBN = txtISBN;
+		this.txtNomeAutor = txtNomeAutor;
+		this.txtDataPublicacao = txtDataPublicacao;
+		this.txtEditora = txtEditora;
+		this.txtCategoria = txtCategoria;
+		this.txtFormato = txtFormato;
 		this.txtnumPaginas = txtnumPaginas;
 		this.txtSumario = txtSumario;
 		this.txtResumo = txtResumo;
@@ -62,18 +61,19 @@ public class LivroEvBtnAlterar implements ActionListener {
 		CadastroLivroDAO livroDao = new CadastroLivroDAO();
 		
 		livro.setTituloLivro(txtTituloLivro.getText());
-		livro.setNomeAutor(comboAutor.getSelectedItem().toString());
-		livro.setCategoriaLivro(comboCategoriaLivro.getSelectedItem().toString());
-		livro.setEditora(comboEditora.getSelectedItem().toString());
-		livro.setDataPublicacao(dataPublicacao.getDate());
-		livro.setFormato(comboFormato.getSelectedItem().toString());
-		livro.setNumeroPaginas(txtnumPaginas.getRows());
-		livro.setSumario(txtSumario.getText());
-		livro.setResumo(txtResumo.getText());
-		livro.setPrecoCusto(txtPrecoCusto.getText());
-		livro.setPrecoVenda(txtPrecoVenda.getText());
-		livro.setMargemLucro(txtMargemLucro.getText());
-		livro.setQtdeEmEstoque(txtQtdeEmEstoque.getText());
+		livro.setTituloLivro(txtISBN.getText());
+		livro.setTituloLivro(txtNomeAutor.getText());
+		livro.setTituloLivro(txtDataPublicacao.getText());
+		livro.setTituloLivro(txtEditora.getText());
+		livro.setTituloLivro(txtCategoria.getText());
+		livro.setTituloLivro(txtFormato.getText());
+		livro.setTituloLivro(txtnumPaginas.getText());
+		livro.setTituloLivro(txtSumario.getText());
+		livro.setTituloLivro(txtResumo.getText());
+		livro.setTituloLivro(txtPrecoCusto.getText());
+		livro.setTituloLivro(txtPrecoVenda.getText());
+		livro.setTituloLivro(txtMargemLucro.getText());
+		livro.setTituloLivro(txtQtdeEmEstoque.getText());
 		
 		try {
 			if (livroDao.update(livro) > 0){

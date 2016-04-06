@@ -19,7 +19,7 @@ public class LivroEntity {
 	private double margemLucro;
 	private int qtdeEmEstoque;
 	
-	public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
+	/*public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
 			String categoriaLivro, String editora, String dataPublicacao,
 			String formato, int numeroPaginas, String sumario, String resumo,
 			double precoCusto, double precoVenda, double margemLucro,
@@ -39,7 +39,8 @@ public class LivroEntity {
 		this.precoVenda = precoVenda;
 		this.margemLucro = margemLucro;
 		this.qtdeEmEstoque = qtdeEmEstoque;
-	}
+	}*/
+
 
 	public int getIsbn() {
 		return isbn;
