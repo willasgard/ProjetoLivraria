@@ -22,10 +22,10 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 
-public class CadClienteBoundary {
+public class CadastroClienteBoundary {
 	
 	
-	public CadClienteBoundary() {
+	public CadastroClienteBoundary() {
 		// TODO Auto-generated constructor stub
 	JFrame janela = new JFrame("Cadastro de Cliente");
 	JPanel panel = new JPanel(new BorderLayout());
@@ -200,7 +200,7 @@ public class CadClienteBoundary {
 	
 	public static void main(String[] args) {
 		
-		new CadClienteBoundary();
+		new CadastroClienteBoundary();
 	}
 	
 
