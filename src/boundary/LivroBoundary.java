@@ -13,6 +13,7 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -20,10 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
-import control.JDateChooser;
-import control.ObraEvBtnSalvar;
+import control.LivroEvBtnSalvar;
 import entity.LivroEntity;
-import entity.ObraEntity;
 
 public class LivroBoundary {
 	
@@ -33,7 +32,6 @@ public class LivroBoundary {
 	private JPanel contentPane;
 	
 	private JTextField txtTituloLivro;
-	
 	private JTextField txtISBN;
 	private JTextField txtNomeAutor;
 	private JTextField txtDataPublicacao;
@@ -232,6 +230,55 @@ public class LivroBoundary {
 	
 	public void telaDefault(){
 		
+		txtISBN.setText("");
+		txtNomeAutor.setText("");
+		txtDataPublicacao.setText("");
+		txtEditora.setText("");
+		txtCategoria.setText("");
+		txtFormato.setText("");
+		txtnumPaginas.setText("");	
+		txtSumario.setText("");
+		txtResumo.setText("");
+		txtPrecoCusto.setText("");
+		txtPrecoVenda.setText("");
+		txtMargemLucro.setText("");
+		txtQtdeEmEstoque.setText("");
+		
+		bntAlterar.setEnabled(false);
+		bntDeletar.setEnabled(false);		
+		BtnVoltar.setEnabled(false);
+		bntSalvar.setEnabled(true);
+		
+	}
+	
+	public void telaAlterar(){
+		
+		bntAlterar.setEnabled(true);
+		bntDeletar.setEnabled(true);		
+		BtnVoltar.setEnabled(true);
+		bntSalvar.setEnabled(true);
+	}
+	
+	public boolean validaCampos(){
+		if (
+				txtISBN.getText().length() <= 0 ||
+				txtNomeAutor.getText().length() <= 0 ||
+				txtDataPublicacao.getText().length() <= 0 ||
+				txtEditora.getText().length() <= 0 ||
+				txtCategoria.getText().length() <= 0 ||
+				txtFormato.getText().length() <= 0 ||
+				txtnumPaginas.getText().length() <= 0 ||	
+				txtSumario.getText().length() <= 0 ||
+				txtResumo.getText().length() <= 0 ||
+				txtPrecoCusto.getText().length() <= 0 ||
+				txtPrecoVenda.getText().length() <= 0 ||
+				txtMargemLucro.getText().length() <= 0 ||
+				txtQtdeEmEstoque.getText().length() <= 0 
+				){
+			JOptionPane.showMessageDialog(null, "Preencher todos os campos");
+			return false;
+		}
+		return true;
 	}
 
 	
