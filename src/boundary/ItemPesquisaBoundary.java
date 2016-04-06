@@ -10,37 +10,39 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+import control.EvbtnLivroItemPesquisa;
+import entity.LivroEntity;
 
 public class ItemPesquisaBoundary extends JPanel{
 
-	private ImageIcon imagem;
-	private String titulo;
-	private String autor;
-	private Double preco;
-	private GridLayout gridlayout = new GridLayout(1, 5, 5, 5);
+	private static final long serialVersionUID = 1L;
+	private LivroEntity livro;
 	
-	public ItemPesquisaBoundary(ImageIcon imagem, String titulo, String autor, Double preco) {
+	public ItemPesquisaBoundary(LivroEntity livro) {
 		super();
-		this.imagem = imagem;
-		this.titulo = titulo;
-		this.autor = autor;
-		this.preco = preco;
+		this.livro = livro;
 		this.criarTela();
 	}
-	
+
 	private void criarTela(){
-		JLabel lbAutor = new JLabel(autor);
-		JLabel lbTitulo = new  JLabel(titulo);
-		JLabel lbPreco = new JLabel("R$ " + preco);
+		GridLayout gridlayout = new GridLayout(1, 5, 5, 5);
+		JLabel lbAutor = new JLabel(livro.getNomeAutor());
+		JLabel lbTitulo = new  JLabel(livro.getTituloLivro());
+		JLabel lbPreco = new JLabel("R$ " + livro.getPrecoVenda());
 		JButton btnImagem = new JButton("");
 		JButton btnAddCarrinho = new JButton("");
 		
-		btnImagem.setIcon(imagem);
+		btnImagem.setIcon(livro.getImagem());
 		btnImagem.setForeground(Color.RED);
 		btnImagem.setBackground(Color.WHITE);
 		btnImagem.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		btnImagem.setBorder(BorderFactory.createEmptyBorder());
 		btnImagem.setToolTipText("Clique na imagem para visualizar mais detalhes sobre o livro");
+		EvbtnLivroItemPesquisa evinfo = 
+				new EvbtnLivroItemPesquisa(livro);
+		btnImagem.addActionListener(evinfo);
 		
 		btnAddCarrinho.setIcon(new ImageIcon(ItemCarrinhoBoundary.class.getResource("/resource/adicionarCarrinho.png")));
 		btnAddCarrinho.setForeground(Color.RED);
@@ -52,17 +54,21 @@ public class ItemPesquisaBoundary extends JPanel{
 		
 		lbAutor.setHorizontalAlignment(JLabel.CENTER);
 		lbAutor.setVerticalAlignment(JLabel.CENTER);
+		lbAutor.setForeground(Color.BLUE);
+		lbAutor.setBackground(Color.WHITE);
+		lbAutor.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
 		lbTitulo.setHorizontalAlignment(JLabel.CENTER);
 		lbTitulo.setVerticalAlignment(JLabel.CENTER);
+		lbTitulo.setForeground(Color.BLUE);
+		lbTitulo.setBackground(Color.WHITE);
+		lbTitulo.setFont(new Font("Tahoma", Font.BOLD, 18));
 		
 		lbPreco.setHorizontalAlignment(JLabel.CENTER);
 		lbPreco.setVerticalAlignment(JLabel.CENTER);
-		
-		lbTitulo.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lbAutor.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbPreco.setForeground(Color.BLUE);
+		lbPreco.setBackground(Color.WHITE);
 		lbPreco.setFont(new Font("Tahoma", Font.BOLD, 22));
-		
 		
 		this.setLayout(gridlayout);
 		this.add(btnImagem);
@@ -73,7 +79,7 @@ public class ItemPesquisaBoundary extends JPanel{
 		
 		this.setForeground(Color.WHITE);
 		this.setBackground(Color.WHITE);
-		this.setBorder(BorderFactory.createEmptyBorder());
+		this.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		
 		
 	}

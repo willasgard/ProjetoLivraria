@@ -2,6 +2,8 @@ package entity;
 
 import java.util.Date;
 
+import javax.swing.ImageIcon;
+
 public class LivroEntity {
 	
 	private int isbn;
@@ -18,10 +20,21 @@ public class LivroEntity {
 	private double precoVenda;
 	private double margemLucro;
 	private int qtdeEmEstoque;
+	private ImageIcon imagem;
 	
+	public ImageIcon getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(ImageIcon imagem) {
+		this.imagem = imagem;
+	}
+
+
 
 	/*public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
 =======
+>>>>>>> branch 'master' of https://github.com/AndreDeveloper/ProjetoLivraria.git
 	public LivroEntity(){
 		
 	}
@@ -160,6 +173,20 @@ public class LivroEntity {
 
 	public void setQtdeEmEstoque(int qtdeEmEstoque) {
 		this.qtdeEmEstoque = qtdeEmEstoque;
+	}
+
+	@Override
+	public String toString() {
+		return "isbn= " + isbn + 
+				"\nTitulo do Livro: " + tituloLivro + ""
+				+ "\nNome do Autor: " + nomeAutor
+				+ "\nCategoria: " + categoriaLivro 
+				+ "\nEditora:" + editora 
+				+ "\nData da Publicacao: " + dataPublicacao
+				+ "\nFormato: " + formato 
+				+ "\nNumero de Paginas: " + numeroPaginas 
+				+ "\nSumario: " + sumario 
+				+ "\nResumo: " + resumo; 
 	}
 	
 	
