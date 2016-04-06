@@ -25,7 +25,7 @@ public class PesquisaDAO {
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1,  "%" + tituloLivro + "%" );
 			stmt.setString(2,  "%" + autorLivro + "%" );
-			stmt.setDouble(3,  "%" + precoLivro + "%" );
+			//stmt.setDouble(3,  "%" + precoLivro + "%" );
 			ResultSet rs  = stmt.executeQuery();
 			while( rs.next() ) { 
 				LivroEntity l = new LivroEntity();
@@ -35,7 +35,7 @@ public class PesquisaDAO {
 				lista.add( l );
 			}
 		} catch (SQLException e) {
-			throw new Exception( e );
+//			throw new Exception( e );
 		}
 		return lista;
 	}
