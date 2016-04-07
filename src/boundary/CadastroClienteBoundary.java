@@ -21,9 +21,24 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import control.EvBtnClienteConcluirCad;
+
 
 public class CadastroClienteBoundary {
-	
+	JLabel lblNome, lblCPF, lblRg, lblCep, lblLogradouro, lblNumero, lblComplemento, lblBairro, lblUf, lblCidade, lblEmail, lblTelefone, lblCelular;
+	JTextField nome;
+	JTextField cpf;
+	JTextField rg;
+	JTextField cep;
+	JTextField logradouro;
+	JTextField numero;
+	JTextField complemento;
+	JTextField bairro;
+	JComboBox cbUf;
+	JTextField cidade;
+	JTextField email;
+	JTextField telefone;
+	JTextField celular;
 	
 	public CadastroClienteBoundary() {
 		// TODO Auto-generated constructor stub
@@ -52,12 +67,12 @@ public class CadastroClienteBoundary {
 	public JComponent Norte (){
 		JPanel panelNorte = new JPanel(new BorderLayout());
 		panelNorte.setBackground(Color.WHITE);
-		JLabel txtTitulo = new JLabel("Identificação - Faça seu cadastro");
-		txtTitulo.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		JLabel txtLogin = new JLabel("Já tem cadastro? Faça o login");
+		JLabel lblTitulo = new JLabel("Identificação - Faça seu cadastro");
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		JLabel lblLogin = new JLabel("Já tem cadastro? Faça o login");
 		
-		panelNorte.add(txtLogin,BorderLayout.EAST);
-		panelNorte.add(txtTitulo,BorderLayout.CENTER);
+		panelNorte.add(lblLogin,BorderLayout.EAST);
+		panelNorte.add(lblTitulo,BorderLayout.CENTER);
 		
 		
 		return panelNorte;
@@ -69,52 +84,52 @@ public class CadastroClienteBoundary {
 		panelCentro.setBackground(Color.WHITE);
 		
 		
-		JLabel txtNome = new JLabel("*Nome Completo: ");
-		panelCentro.add(txtNome);
-		JTextField nome = new JTextField(30);
+		lblNome = new JLabel("*Nome Completo: ");
+		panelCentro.add(lblNome);
+		nome = new JTextField(30);
 		panelCentro.add(nome);
 		
-		JLabel txtCPF = new JLabel("*CPF: ");
-		panelCentro.add(txtCPF);
-		JTextField cpf = new JTextField(10);
+		lblCPF = new JLabel("*CPF: ");
+		panelCentro.add(lblCPF);
+		cpf = new JTextField(10);
 		panelCentro.add(cpf);
 		
-		JLabel txtRG = new JLabel("*RG: ");
-		panelCentro.add(txtRG);
-		JTextField RG = new JTextField(10);
-		panelCentro.add(RG);
+		lblRg = new JLabel("*RG: ");
+		panelCentro.add(lblRg);
+		rg = new JTextField(10);
+		panelCentro.add(rg);
 		
-		JLabel lblCEP = new JLabel("*CEP: ");
-		panelCentro.add(lblCEP);
-		JTextField CEP = new JTextField(10);
-		panelCentro.add(CEP);
+		lblCep = new JLabel("*CEP: ");
+		panelCentro.add(lblCep);
+		cep = new JTextField(10);
+		panelCentro.add(cep);
 		
 		
 		
-		JLabel lblLogradouro = new JLabel("*Logradouro: ");
+		lblLogradouro = new JLabel("*Logradouro: ");
 		panelCentro.add(lblLogradouro);
-		JTextField logradouro = new JTextField(30);
+		logradouro = new JTextField(30);
 		panelCentro.add(logradouro);
 		
-		JLabel lblNumero = new JLabel("*Número: ");
+		lblNumero = new JLabel("*Número: ");
 		panelCentro.add(lblNumero);
-		JTextField Numero = new JTextField(30);
-		panelCentro.add(Numero);
+		numero = new JTextField(30);
+		panelCentro.add(numero);
 	
-		JLabel lblComplemento = new JLabel("*Complemento: ");
+		lblComplemento = new JLabel("*Complemento: ");
 		panelCentro.add(lblComplemento);
-		JTextField Complemento = new JTextField(30);
-		panelCentro.add(Complemento);
+		complemento = new JTextField(30);
+		panelCentro.add(complemento);
 		
 
-		JLabel lblBairro = new JLabel("*Bairro: ");
+		lblBairro = new JLabel("*Bairro: ");
 		panelCentro.add(lblBairro);
-		JTextField Bairro = new JTextField(30);
-		panelCentro.add(Bairro);
+		bairro = new JTextField(30);
+		panelCentro.add(bairro);
 		
-		JLabel lblUF = new JLabel("*UF");
-		panelCentro.add(lblUF);
-		JComboBox cbUF = new JComboBox();
+		lblUf = new JLabel("*UF");
+		panelCentro.add(lblUf);
+		cbUf = new JComboBox();
 		Vector UF = new Vector();
 		
 		UF.add("");
@@ -124,18 +139,19 @@ public class CadastroClienteBoundary {
 		UF.add("BA");
 		UF.add("MT");
 		
+		
 		for (int i=0;i<UF.size();i++){
-			cbUF.addItem(UF.get(i));
+			cbUf.addItem(UF.get(i));
 		}
 		
 		
-		panelCentro.add(cbUF);
+		panelCentro.add(cbUf);
 
 		
-		JLabel lblCidade = new JLabel("*Cidade: ");
+		lblCidade = new JLabel("*Cidade: ");
 		panelCentro.add(lblCidade);
-		JTextField Cidade = new JTextField(30);
-		panelCentro.add(Cidade);
+		cidade = new JTextField(30);
+		panelCentro.add(cidade);
 
 		
 		
@@ -158,10 +174,10 @@ public class CadastroClienteBoundary {
 		
 		panelCentro.add(cbSexo);
 		
-		JLabel lblEmail = new JLabel("*Email: ");
+		lblEmail = new JLabel("*Email: ");
 		panelCentro.add(lblEmail);
-		JTextField Email = new JTextField(30);
-		panelCentro.add(Email);
+		email = new JTextField(30);
+		panelCentro.add(email);
 		
 		
 		JLabel lblTelefone = new JLabel("*Telefone: ");
@@ -207,6 +223,8 @@ public class CadastroClienteBoundary {
 		btnCadastrar.setBackground(Color.GREEN);
 		btnCadastrar.setForeground(Color.WHITE);
 		
+		EvBtnClienteConcluirCad btnCadController = new EvBtnClienteConcluirCad(lblNome, lblCPF, lblRg, lblCep, lblLogradouro, lblNumero, lblComplemento, lblBairro, lblUf, lblCidade, lblEmail, lblTelefone, lblCelular, nome, cpf, rg, cep, logradouro, numero, complemento, bairro, cbUf, cidade, email, telefone, celular, btnCadastrar);
+		btnCadastrar.addActionListener(btnCadController);
 		
 		
 		return PanelSul;
