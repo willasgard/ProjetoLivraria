@@ -1,5 +1,7 @@
 package control;
 
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -7,6 +9,7 @@ import boundary.CarrinhoBoundary;
 import boundary.ItemCarrinhoBoundary;
 import boundary.ItemPesquisaBoundary;
 import boundary.LivroBoundary;
+import boundary.PesquisaBoundary;
 import entity.AuxQtdadeEntity;
 import entity.ItemCarrinhoEntity;
 import entity.LivroEntity;
@@ -31,11 +34,14 @@ public class tester {
 		livro.setImagem(
 				new ImageIcon(CarrinhoBoundary.class.getResource("/resource/livro.png"))		
 				);
-		ItemPesquisaBoundary teste = new ItemPesquisaBoundary(livro);
-		JFrame frame = new JFrame("teste");
-		frame.setContentPane(teste);
-		frame.setSize(900,200);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
+		java.util.List<LivroEntity> listaLivro = new ArrayList<LivroEntity>();
+		for(int x=1;x<5;x++){
+			listaLivro.add(livro);
+		}
+		
+		
+		PesquisaBoundary tela = new PesquisaBoundary();
+		tela.mostraPesquisa(listaLivro);
+		
 	}
 }
