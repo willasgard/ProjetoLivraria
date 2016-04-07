@@ -53,6 +53,10 @@ public class LivroEvBtnSalvar implements ActionListener {
 		this.txtQtdeEmEstoque = txtQtdeEmEstoque;		
 	}
 	
+	public LivroEvBtnSalvar(){
+		
+	}
+	
 	public void salvar(){
 		LivroEntity livroEntity = new LivroEntity();
 		CadastroLivroDAO livroDAO = new CadastroLivroDAO();

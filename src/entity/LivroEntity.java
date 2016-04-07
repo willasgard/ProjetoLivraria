@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 
 public class LivroEntity {
 	
+	private int id;
 	private int isbn;
 	private String tituloLivro;
 	private String nomeAutor;
@@ -190,10 +191,4 @@ public class LivroEntity {
 	}
 	
 	
-	
-	
-	
-	
-
-
 }
