@@ -22,7 +22,7 @@ public class PesquisaControl implements TableModel {
 		}
 	}
 
-	public List<LivroEntity> pesquisarDisciplina(String tituloLivro, String NomeAutor, Double PrecoVenda ) {
+	public List<LivroEntity> pesquisarLivro(String tituloLivro, String NomeAutor, Double PrecoVenda ) {
 		try {
 			listaPesquisa = pesquisaDAO.perquisarLivro(tituloLivro, NomeAutor, PrecoVenda);
 		} catch (Exception e) {

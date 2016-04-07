@@ -1,8 +1,10 @@
 package boundary;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +23,8 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+
+import control.PesquisaControl;
 
 public class PesquisaBoundary extends JFrame {
 
@@ -43,20 +47,6 @@ public class PesquisaBoundary extends JFrame {
 		private JTextField txtTitulo;
 		private JTextField txtAutor;
 		private JTextField txtEditora;
-		private JPanel painelPromocoes;
-		private JLabel lblPromocoes;
-		private JLabel lblLivro1;
-		private JLabel lblLivro2;
-		private JLabel lblLivro3;
-		private JButton bntConfira;
-		private JPanel painelLancamentos;
-		private JLabel lblLancamentos;
-		private JLabel lblLivro4;
-		private JLabel lblTitulolivro;
-		private JLabel lblTituloautor;
-		private JLabel lblR;
-		private JButton bntDetalhes;
-		private JButton bntAdicionar;
 		private JList listaCategorias;
 		private JScrollPane scrollPane;
 
@@ -80,12 +70,15 @@ public class PesquisaBoundary extends JFrame {
 		 * Create the frame.
 		 */
 		public PesquisaBoundary() {
+			JPanel painelPrincipal = new JPanel();
+			painelPrincipal.setLayout(new BorderLayout());
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(200, 200, 544, 449);
 			contentPane = new JPanel();
 			contentPane.setBorder(UIManager.getBorder("TableHeader.cellBorder"));
 			contentPane.setBackground(Color.WHITE);
-			setContentPane(contentPane);
+			painelPrincipal.add(contentPane, BorderLayout.CENTER);
+			setContentPane(painelPrincipal);
 			contentPane.setLayout(null);
 			
 			JLabel lblLivrariaDigital = new JLabel("Livraria Digital");
@@ -93,47 +86,6 @@ public class PesquisaBoundary extends JFrame {
 			lblLivrariaDigital.setFont(new Font("Arial", Font.BOLD, 12));
 			contentPane.add(lblLivrariaDigital);
 			
-			txtPesquisarPagina = new JTextField();
-			txtPesquisarPagina.setBounds(160, 21, 309, 20);
-			contentPane.add(txtPesquisarPagina);
-			txtPesquisarPagina.setColumns(10);
-			
-			bntPesquisarPagina = new JButton("");
-			bntPesquisarPagina.setBounds(471, 20, 47, 23);
-			bntPesquisarPagina.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
-			bntPesquisarPagina.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/lupa.png")));
-			contentPane.add(bntPesquisarPagina);
-			
-			bntHome = new JButton("");
-			bntHome.setBounds(122, 20, 34, 23);
-			bntHome.setBackground(UIManager.getColor("Button.background"));
-			bntHome.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
-			bntHome.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/home.png")));
-			contentPane.add(bntHome);
-			
-			bntEncerrar = new JButton("");
-			bntEncerrar.setBounds(85, 20, 34, 23);
-			bntEncerrar.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/encerrar.png")));
-			bntEncerrar.setBackground(SystemColor.menu);
-			contentPane.add(bntEncerrar);
-			
-			bntVoltar = new JButton("");
-			bntVoltar.setBounds(10, 20, 34, 23);
-			bntVoltar.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/setaEsquerda.png")));
-			bntVoltar.setBackground(SystemColor.menu);
-			contentPane.add(bntVoltar);
-			
-			bntAvancar = new JButton("");
-			bntAvancar.setBounds(48, 20, 34, 23);
-			bntAvancar.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/setaDireita.png")));
-			bntAvancar.setBackground(SystemColor.menu);
-			contentPane.add(bntAvancar);
 			
 			JPanel panel = new JPanel();
 			panel.setBounds(0, 0, 528, 48);
@@ -161,19 +113,19 @@ public class PesquisaBoundary extends JFrame {
 			lblIconeUsuario = new JLabel("New label");
 			lblIconeUsuario.setBounds(329, 1, 42, 41);
 			panel_1.add(lblIconeUsuario);
-			lblIconeUsuario.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/login.png")));
+			lblIconeUsuario.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/resource/login.png")));
 			
 			lblImagemCarrinho = new JLabel("New label");
 			lblImagemCarrinho.setBounds(448, 10, 37, 28);
 			panel_1.add(lblImagemCarrinho);
-			lblImagemCarrinho.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/carrinho.png")));
+			lblImagemCarrinho.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/resource/carrinho.png")));
 			
 			lblImgLivros = new JLabel("New label");
 			lblImgLivros.setBounds(19, 1, 65, 53);
 			panel_1.add(lblImgLivros);
-			lblImgLivros.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/images/livros.png")));
+			lblImgLivros.setIcon(new ImageIcon(PesquisaBoundary.class.getResource("/resource/livros.png")));
 			
-			JLabel lblTtulo = new JLabel("T\u00EDtulo");
+			JLabel lblTtulo = new JLabel("Título");
 			lblTtulo.setFont(new Font("Arial", Font.PLAIN, 12));
 			lblTtulo.setHorizontalAlignment(SwingConstants.CENTER);
 			lblTtulo.setBounds(148, 116, 38, 14);
@@ -211,81 +163,12 @@ public class PesquisaBoundary extends JFrame {
 			bntPesquisar.setBounds(433, 135, 85, 23);
 			contentPane.add(bntPesquisar);
 			
-			painelPromocoes = new JPanel();
-			painelPromocoes.setBounds(148, 163, 370, 116);
-			contentPane.add(painelPromocoes);
-			painelPromocoes.setLayout(null);
-			
-			lblPromocoes = new JLabel("Promo\u00E7\u00F5es");
-			lblPromocoes.setBounds(3, 5, 69, 14);
-			painelPromocoes.add(lblPromocoes);
-			lblPromocoes.setFont(new Font("Arial", Font.BOLD, 11));
-			
-			lblLivro1 = new JLabel("Livro 1");
-			lblLivro1.setBackground(Color.LIGHT_GRAY);
-			lblLivro1.setHorizontalAlignment(SwingConstants.CENTER);
-			lblLivro1.setBounds(3, 21, 69, 84);
-			painelPromocoes.add(lblLivro1);
-			
-			lblLivro2 = new JLabel("Livro 2");
-			lblLivro2.setHorizontalAlignment(SwingConstants.CENTER);
-			lblLivro2.setBounds(82, 21, 69, 84);
-			painelPromocoes.add(lblLivro2);
-			
-			lblLivro3 = new JLabel("Livro 3");
-			lblLivro3.setHorizontalAlignment(SwingConstants.CENTER);
-			lblLivro3.setBounds(161, 21, 69, 84);
-			painelPromocoes.add(lblLivro3);
-			
-			bntConfira = new JButton("Confira!!!");
-			bntConfira.setFont(new Font("Arial", Font.PLAIN, 11));
-			bntConfira.setBackground(Color.YELLOW);
-			bntConfira.setBounds(271, 52, 89, 23);
-			painelPromocoes.add(bntConfira);
-			
-			painelLancamentos = new JPanel();
-			painelLancamentos.setLayout(null);
-			painelLancamentos.setBounds(148, 283, 370, 116);
-			contentPane.add(painelLancamentos);
-			
-			lblLancamentos = new JLabel("Lan\u00E7amentos");
-			lblLancamentos.setFont(new Font("Arial", Font.BOLD, 11));
-			lblLancamentos.setBounds(3, 5, 89, 14);
-			painelLancamentos.add(lblLancamentos);
-			
-			lblLivro4 = new JLabel("Livro 1");
-			lblLivro4.setHorizontalAlignment(SwingConstants.CENTER);
-			lblLivro4.setBackground(Color.LIGHT_GRAY);
-			lblLivro4.setBounds(3, 21, 69, 84);
-			painelLancamentos.add(lblLivro4);
-			
-			lblTitulolivro = new JLabel("Era uma vez");
-			lblTitulolivro.setBounds(82, 21, 69, 14);
-			painelLancamentos.add(lblTitulolivro);
-			
-			lblTituloautor = new JLabel("Soares, J.F.");
-			lblTituloautor.setBounds(82, 39, 69, 14);
-			painelLancamentos.add(lblTituloautor);
-			
-			lblR = new JLabel("R$ 38,50");
-			lblR.setBounds(82, 69, 69, 14);
-			painelLancamentos.add(lblR);
-			
-			bntDetalhes = new JButton("Detalhes");
-			bntDetalhes.setBounds(161, 21, 89, 23);
-			painelLancamentos.add(bntDetalhes);
-			
-			bntAdicionar = new JButton("Adicionar");
-			bntAdicionar.setBounds(161, 65, 89, 23);
-			painelLancamentos.add(bntAdicionar);
-			
-			JTextArea textArea = new JTextArea();
-			textArea.setBounds(10, 113, 4, 22);
-			contentPane.add(textArea);
-			
 			scrollPane = new JScrollPane();
 			scrollPane.setBounds(10, 113, 128, 286);
 			contentPane.add(scrollPane);
+			
+			
+			
 			
 			listaCategorias = new JList();
 			scrollPane.setViewportView(listaCategorias);
@@ -299,6 +182,7 @@ public class PesquisaBoundary extends JFrame {
 					return values[index];
 				}
 			});
+			
 			
 			
 		}
