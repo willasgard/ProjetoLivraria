@@ -1,9 +1,8 @@
 package entity;
 
 public class ClienteEntity extends EnderecoEntity{
-	
+	private int CodCliente;
 	private String nome;
-	
 	private int cpf;
 	private int rg;
 	private String sexo;
@@ -12,6 +11,16 @@ public class ClienteEntity extends EnderecoEntity{
 	private int celular;
 	
 	
+	public int getCodCliente() {
+		return CodCliente;
+	}
+
+
+	public void setCodCliente(int codCliente) {
+		CodCliente = codCliente;
+	}
+
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
