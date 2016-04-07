@@ -5,12 +5,9 @@ import java.util.Date;
 import javax.swing.ImageIcon;
 
 public class LivroEntity {
-<<<<<<< HEAD
 	
 	private int id;
-=======
 
->>>>>>> 5cc1a682fcc9508cddf9394ea7c92200a1da0297
 	private int isbn;
 	private String tituloLivro;
 	private String nomeAutor;
@@ -175,7 +172,6 @@ public class LivroEntity {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
 		return "isbn= " + isbn + 
 				"\nTitulo do Livro: " + tituloLivro + ""
 				+ "\nNome do Autor: " + nomeAutor
@@ -186,15 +182,14 @@ public class LivroEntity {
 				+ "\nNumero de Paginas: " + numeroPaginas 
 				+ "\nSumario: " + sumario 
 				+ "\nResumo: " + resumo; 
+		
 	}
-	
-	
-=======
-		return "isbn= " + isbn + "\nTitulo do Livro: " + tituloLivro + "" + "\nNome do Autor: " + nomeAutor
-				+ "\nCategoria: " + categoriaLivro + "\nEditora:" + editora + "\nData da Publicacao: " + dataPublicacao
-				+ "\nFormato: " + formato + "\nNumero de Paginas: " + numeroPaginas + "\nSumario: " + sumario
-				+ "\nResumo: " + resumo;
-	}
-
->>>>>>> 5cc1a682fcc9508cddf9394ea7c92200a1da0297
 }
+	
+	
+//	
+//		return "isbn= " + isbn + "\nTitulo do Livro: " + tituloLivro + "" + "\nNome do Autor: " + nomeAutor
+//				+ "\nCategoria: " + categoriaLivro + "\nEditora:" + editora + "\nData da Publicacao: " + dataPublicacao
+//				+ "\nFormato: " + formato + "\nNumero de Paginas: " + numeroPaginas + "\nSumario: " + sumario
+//				+ "\nResumo: " + resumo;
+		
