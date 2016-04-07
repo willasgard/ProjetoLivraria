@@ -3,28 +3,16 @@ package entity;
 public class ClienteEntity extends EnderecoEntity{
 	private int CodCliente;
 	private String nome;
-	private int cpf;
-	private int rg;
+	private String cpf;
+	private String rg;
 	private String sexo;
 	private String email;
-	private int telefone;
-	private int celular;
+	private String telefone;
+	private String celular;
 	
 	
 	public int getCodCliente() {
 		return CodCliente;
-	}
-
-
-	public void setCodCliente(int codCliente) {
-		CodCliente = codCliente;
-	}
-
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return this.nome;
 	}
 
 
@@ -38,22 +26,22 @@ public class ClienteEntity extends EnderecoEntity{
 	}
 
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
 
-	public int getRg() {
+	public String getRg() {
 		return rg;
 	}
 
 
-	public void setRg(int rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
@@ -78,23 +66,32 @@ public class ClienteEntity extends EnderecoEntity{
 	}
 
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
 
-	public int getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
 
-	public void setCelular(int celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
+
+
+	public void setCodCliente(int codCliente) {
+		CodCliente = codCliente;
+	}
+
+
+
+	
 	
 }
