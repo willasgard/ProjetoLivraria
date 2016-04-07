@@ -61,10 +61,10 @@ public class CadastroClienteBoundary {
 		
 		
 		return panelNorte;
-		
+	
 	}
 	public JComponent Centro(){
-		JPanel panelCentro = new JPanel(new GridLayout(12,1,10,10));
+		JPanel panelCentro = new JPanel(new GridLayout(14,1,10,10));
 		
 		panelCentro.setBackground(Color.WHITE);
 		
@@ -84,16 +84,60 @@ public class CadastroClienteBoundary {
 		JTextField RG = new JTextField(10);
 		panelCentro.add(RG);
 		
+		JLabel lblCEP = new JLabel("*CEP: ");
+		panelCentro.add(lblCEP);
+		JTextField CEP = new JTextField(10);
+		panelCentro.add(CEP);
 		
-		JLabel lblEndereco = new JLabel("*Endereço: ");
-		panelCentro.add(lblEndereco);
-		JTextField Endereco = new JTextField(30);
-		panelCentro.add(Endereco);
+		
+		
+		JLabel lblLogradouro = new JLabel("*Logradouro: ");
+		panelCentro.add(lblLogradouro);
+		JTextField logradouro = new JTextField(30);
+		panelCentro.add(logradouro);
+		
+		JLabel lblNumero = new JLabel("*Número: ");
+		panelCentro.add(lblNumero);
+		JTextField Numero = new JTextField(30);
+		panelCentro.add(Numero);
+	
+		JLabel lblComplemento = new JLabel("*Complemento: ");
+		panelCentro.add(lblComplemento);
+		JTextField Complemento = new JTextField(30);
+		panelCentro.add(Complemento);
+		
 
 		JLabel lblBairro = new JLabel("*Bairro: ");
 		panelCentro.add(lblBairro);
 		JTextField Bairro = new JTextField(30);
 		panelCentro.add(Bairro);
+		
+		JLabel lblUF = new JLabel("*UF");
+		panelCentro.add(lblUF);
+		JComboBox cbUF = new JComboBox();
+		Vector UF = new Vector();
+		
+		UF.add("");
+		UF.add("SP");
+		UF.add("RJ");
+		UF.add("MG");
+		UF.add("BA");
+		UF.add("MT");
+		
+		for (int i=0;i<UF.size();i++){
+			cbUF.addItem(UF.get(i));
+		}
+		
+		
+		panelCentro.add(cbUF);
+
+		
+		JLabel lblCidade = new JLabel("*Cidade: ");
+		panelCentro.add(lblCidade);
+		JTextField Cidade = new JTextField(30);
+		panelCentro.add(Cidade);
+
+		
 		
 		
 		JLabel lblSexo = new JLabel("*Sexo");
@@ -130,30 +174,7 @@ public class CadastroClienteBoundary {
 		JTextField Celular = new JTextField(10);
 		panelCentro.add(Celular);
 		
-		JLabel lblCEP = new JLabel("*CEP: ");
-		panelCentro.add(lblCEP);
-		JTextField CEP = new JTextField(10);
-		panelCentro.add(CEP);
-		
-		JLabel lblUF = new JLabel("*UF");
-		panelCentro.add(lblUF);
-		JComboBox cbUF = new JComboBox();
-		Vector UF = new Vector();
-		
-		UF.add("");
-		UF.add("SP");
-		UF.add("RJ");
-		UF.add("MG");
-		UF.add("BA");
-		UF.add("MT");
-		
-		for (int i=0;i<UF.size();i++){
-			cbUF.addItem(UF.get(i));
-		}
-		
-		
-		panelCentro.add(cbUF);
-
+	
 		
 		
 

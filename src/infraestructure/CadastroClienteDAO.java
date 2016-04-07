@@ -24,7 +24,7 @@ public class CadastroClienteDAO {
 		ps.setInt(3, clt.getRg());
 		ps.setString(4,clt.getSexo());
 		ps.setString(5, clt.getLogradouro());
-		ps.setInt(6,clt.getNumero());
+		ps.setInt(6, clt.getNumero());
 		ps.setString(7, clt.getComplemento());
 		ps.setString(8, clt.getBairro());
 		ps.setString(9,clt.getCidade());
@@ -49,7 +49,7 @@ public void AtualizaCliente (ClienteEntity clt)throws SQLException{
 	ps.setInt(3, clt.getRg());
 	ps.setString(4,clt.getSexo());
 	ps.setString(5, clt.getLogradouro());
-	ps.setInt(6,clt.getNumero());
+	ps.setInt(6, clt.getNumero());
 	ps.setString(7, clt.getComplemento());
 	ps.setString(8, clt.getBairro());
 	ps.setString(9,clt.getCidade());

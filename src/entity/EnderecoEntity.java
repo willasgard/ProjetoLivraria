@@ -3,13 +3,13 @@ package entity;
 public class EnderecoEntity {
 	
 	private String logradouro;
+	private int numero;
 	private String bairro;
 	private int cep;
 	private String uf;
-	private int numero;
 	private String complemento;
 	private String cidade;
-	
+
 	public int getNumero() {
 		return numero;
 	}
