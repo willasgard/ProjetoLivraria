@@ -14,7 +14,7 @@ import boundary.LivroBoundary;
 import infraestructure.CadastroLivroDAO;
 
 public class LivroEvBtnAlterar implements ActionListener {
-	
+
 	private LivroBoundary TelaLivro;
 	private JTextField txtTituloLivro;
 	private JTextField txtISBN;
@@ -23,20 +23,19 @@ public class LivroEvBtnAlterar implements ActionListener {
 	private JTextField txtEditora;
 	private JTextField txtCategoria;
 	private JTextField txtFormato;
-	private JTextField txtnumPaginas;	
+	private JTextField txtnumPaginas;
 	private JTextField txtSumario;
 	private JTextField txtResumo;
 	private JTextField txtPrecoCusto;
 	private JTextField txtPrecoVenda;
 	private JTextField txtMargemLucro;
 	private JTextField txtQtdeEmEstoque;
-	
-	
-	public LivroEvBtnAlterar (LivroBoundary telaLivro, JTextField txtTituloLivro, JTextField txtISBN, JTextField txtNomeAutor,
-							  JTextField txtDataPublicacao, JTextField txtEditora, JTextField txtCategoria,
-							  JTextField txtFormato, JTextField txtnumPaginas, JTextField txtSumario,
-							  JTextField txtResumo,	JTextField txtPrecoCusto, JTextField txtPrecoVenda,
-							  JTextField txtMargemLucro, JTextField txtQtdeEmEstoque){
+
+	public LivroEvBtnAlterar(LivroBoundary telaLivro, JTextField txtTituloLivro, JTextField txtISBN,
+			JTextField txtNomeAutor, JTextField txtDataPublicacao, JTextField txtEditora, JTextField txtCategoria,
+			JTextField txtFormato, JTextField txtnumPaginas, JTextField txtSumario, JTextField txtResumo,
+			JTextField txtPrecoCusto, JTextField txtPrecoVenda, JTextField txtMargemLucro,
+			JTextField txtQtdeEmEstoque) {
 		super();
 		this.TelaLivro = telaLivro;
 		this.txtTituloLivro = txtTituloLivro;
@@ -54,26 +53,24 @@ public class LivroEvBtnAlterar implements ActionListener {
 		this.txtMargemLucro = txtMargemLucro;
 		this.txtQtdeEmEstoque = txtQtdeEmEstoque;
 	}
-	
-	public void acao (){
+
+	public void acao() {
 		LivroEntity livro = this.TelaLivro.getLivroEntity();
 		CadastroLivroDAO livroDao = new CadastroLivroDAO();
-		
+
 		livro.setTituloLivro(txtTituloLivro.getText());
-<<<<<<< 739e7adc1b73d22dbc0ec92041f2d58e36fd461e
-		livro.setNomeAutor(comboAutor.getSelectedItem().toString());
-		livro.setCategoriaLivro(comboCategoriaLivro.getSelectedItem().toString());
-		livro.setEditora(comboEditora.getSelectedItem().toString());
-//		livro.setDataPublicacao(dataPublicacao.getDate());
-		livro.setFormato(comboFormato.getSelectedItem().toString());
-		livro.setNumeroPaginas(txtnumPaginas.getRows());
+		// livro.setNomeAutor(comboAutor.getSelectedItem().toString());
+		// livro.setCategoriaLivro(comboCategoriaLivro.getSelectedItem().toString());
+		// livro.setEditora(comboEditora.getSelectedItem().toString());
+		// livro.setDataPublicacao(dataPublicacao.getDate());
+		// livro.setFormato(comboFormato.getSelectedItem().toString());
+		// livro.setNumeroPaginas(txtnumPaginas.getRows());
 		livro.setSumario(txtSumario.getText());
 		livro.setResumo(txtResumo.getText());
-	//	livro.setPrecoCusto(txtPrecoCusto.getText());
-	//	livro.setPrecoVenda(txtPrecoVenda.getText());
-	//	livro.setMargemLucro(txtMargemLucro.getText());
-	//	livro.setQtdeEmEstoque(txtQtdeEmEstoque.getText());
-=======
+		// livro.setPrecoCusto(txtPrecoCusto.getText());
+		// livro.setPrecoVenda(txtPrecoVenda.getText());
+		// livro.setMargemLucro(txtMargemLucro.getText());
+		// livro.setQtdeEmEstoque(txtQtdeEmEstoque.getText());
 		livro.setTituloLivro(txtISBN.getText());
 		livro.setTituloLivro(txtNomeAutor.getText());
 		livro.setTituloLivro(txtDataPublicacao.getText());
@@ -87,23 +84,21 @@ public class LivroEvBtnAlterar implements ActionListener {
 		livro.setTituloLivro(txtPrecoVenda.getText());
 		livro.setTituloLivro(txtMargemLucro.getText());
 		livro.setTituloLivro(txtQtdeEmEstoque.getText());
->>>>>>> Cadastro do Livro: CRUD e tela concluídos. Necessita de pequenos
-		
+
 		try {
-			if (livroDao.update(livro) > 0){
+			if (livroDao.update(livro) > 0) {
 				JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso!");
 			} else {
 				JOptionPane.showMessageDialog(null, "Erro ao cadastrar o livro.");
-			} 
-		} catch (Exception e){
+			}
+		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
-	
-	public void actionPerformed (ActionEvent arg0){
+
+	public void actionPerformed(ActionEvent arg0) {
 		if (TelaLivro.validaCampos())
 			acao();
 	}
-
 
 }
