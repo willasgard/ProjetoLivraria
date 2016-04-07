@@ -80,7 +80,6 @@ public class ItemCarrinhoBoundary extends JPanel{
 		
 		
 		imagem.setHorizontalAlignment(JLabel.CENTER);
-		//nomeLivro.setHorizontalAlignment(JLabel.CENTER);
 		preco.setHorizontalAlignment(JLabel.CENTER);
 		lbSubTotal.setHorizontalAlignment(JLabel.CENTER);
 		imagem.setVerticalAlignment(JLabel.CENTER);
