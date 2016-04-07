@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.swing.ImageIcon;
 
 public class LivroEntity {
-	
+
 	private int isbn;
 	private String tituloLivro;
 	private String nomeAutor;
@@ -21,7 +21,7 @@ public class LivroEntity {
 	private double margemLucro;
 	private int qtdeEmEstoque;
 	private ImageIcon imagem;
-	
+
 	public ImageIcon getImagem() {
 		return imagem;
 	}
@@ -30,38 +30,31 @@ public class LivroEntity {
 		this.imagem = imagem;
 	}
 
-
-
-	/*public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
-=======
->>>>>>> branch 'master' of https://github.com/AndreDeveloper/ProjetoLivraria.git
-	public LivroEntity(){
-		
-	}
-	
-	public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
->>>>>>> 8b327b74bb9912c0db4853d0dd43d3b1ef98c223
-			String categoriaLivro, String editora, String dataPublicacao,
-			String formato, int numeroPaginas, String sumario, String resumo,
-			double precoCusto, double precoVenda, double margemLucro,
-			int qtdeEmEstoque) {
-		super();
-		this.isbn = isbn;
-		this.tituloLivro = tituloLivro;
-		this.nomeAutor = nomeAutor;
-		this.categoriaLivro = categoriaLivro;
-		this.editora = editora;
-		this.dataPublicacao = dataPublicacao;
-		this.formato = formato;
-		this.numeroPaginas = numeroPaginas;
-		this.sumario = sumario;
-		this.resumo = resumo;
-		this.precoCusto = precoCusto;
-		this.precoVenda = precoVenda;
-		this.margemLucro = margemLucro;
-		this.qtdeEmEstoque = qtdeEmEstoque;
-	}*/
-
+	/*
+	 * public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
+	 * ======= >>>>>>> branch 'master' of
+	 * https://github.com/AndreDeveloper/ProjetoLivraria.git <<<<<<< HEAD
+	 * >>>>>>> pesquisa item ======= >>>>>>>
+	 * 8231669bb9a2e0e7e8783c627dd1c7a664cc8294 public LivroEntity(){
+	 * 
+	 * }
+	 * 
+	 * public LivroEntity(int isbn, String tituloLivro, String nomeAutor,
+	 * <<<<<<< HEAD ======= /*public LivroEntity(int isbn, String tituloLivro,
+	 * String nomeAutor, >>>>>>> Cadastro do Livro: CRUD e tela concluídos.
+	 * Necessita de pequenos ======= >>>>>>>
+	 * 8b327b74bb9912c0db4853d0dd43d3b1ef98c223 >>>>>>>
+	 * 8231669bb9a2e0e7e8783c627dd1c7a664cc8294 String categoriaLivro, String
+	 * editora, String dataPublicacao, String formato, int numeroPaginas, String
+	 * sumario, String resumo, double precoCusto, double precoVenda, double
+	 * margemLucro, int qtdeEmEstoque) { super(); this.isbn = isbn;
+	 * this.tituloLivro = tituloLivro; this.nomeAutor = nomeAutor;
+	 * this.categoriaLivro = categoriaLivro; this.editora = editora;
+	 * this.dataPublicacao = dataPublicacao; this.formato = formato;
+	 * this.numeroPaginas = numeroPaginas; this.sumario = sumario; this.resumo =
+	 * resumo; this.precoCusto = precoCusto; this.precoVenda = precoVenda;
+	 * this.margemLucro = margemLucro; this.qtdeEmEstoque = qtdeEmEstoque; }
+	 */
 
 	public int getIsbn() {
 		return isbn;
@@ -177,23 +170,10 @@ public class LivroEntity {
 
 	@Override
 	public String toString() {
-		return "isbn= " + isbn + 
-				"\nTitulo do Livro: " + tituloLivro + ""
-				+ "\nNome do Autor: " + nomeAutor
-				+ "\nCategoria: " + categoriaLivro 
-				+ "\nEditora:" + editora 
-				+ "\nData da Publicacao: " + dataPublicacao
-				+ "\nFormato: " + formato 
-				+ "\nNumero de Paginas: " + numeroPaginas 
-				+ "\nSumario: " + sumario 
-				+ "\nResumo: " + resumo; 
+		return "isbn= " + isbn + "\nTitulo do Livro: " + tituloLivro + "" + "\nNome do Autor: " + nomeAutor
+				+ "\nCategoria: " + categoriaLivro + "\nEditora:" + editora + "\nData da Publicacao: " + dataPublicacao
+				+ "\nFormato: " + formato + "\nNumero de Paginas: " + numeroPaginas + "\nSumario: " + sumario
+				+ "\nResumo: " + resumo;
 	}
-	
-	
-	
-	
-	
-	
-
 
 }
