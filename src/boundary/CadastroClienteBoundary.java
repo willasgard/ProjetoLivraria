@@ -180,15 +180,15 @@ public class CadastroClienteBoundary {
 		panelCentro.add(email);
 		
 		
-		JLabel lblTelefone = new JLabel("*Telefone: ");
+		lblTelefone = new JLabel("*Telefone: ");
 		panelCentro.add(lblTelefone);
-		JTextField Telefone = new JTextField(10);
-		panelCentro.add(Telefone);
+		telefone = new JTextField(10);
+		panelCentro.add(telefone);
 		
 		JLabel lblCelular = new JLabel("*Celular: ");
 		panelCentro.add(lblCelular);
-		JTextField Celular = new JTextField(10);
-		panelCentro.add(Celular);
+		celular = new JTextField(10);
+		panelCentro.add(celular);
 		
 	
 		
@@ -223,7 +223,13 @@ public class CadastroClienteBoundary {
 		btnCadastrar.setBackground(Color.GREEN);
 		btnCadastrar.setForeground(Color.WHITE);
 		
-		EvBtnClienteConcluirCad btnCadController = new EvBtnClienteConcluirCad(lblNome, lblCPF, lblRg, lblCep, lblLogradouro, lblNumero, lblComplemento, lblBairro, lblUf, lblCidade, lblEmail, lblTelefone, lblCelular, nome, cpf, rg, cep, logradouro, numero, complemento, bairro, cbUf, cidade, email, telefone, celular, btnCadastrar);
+		EvBtnClienteConcluirCad btnCadController = 
+				new EvBtnClienteConcluirCad(nome, cpf, rg, cep,
+						logradouro, numero, complemento,
+						bairro, cbUf, cidade, email, 
+						telefone, celular, btnCadastrar);
+						
+						
 		btnCadastrar.addActionListener(btnCadController);
 		
 		

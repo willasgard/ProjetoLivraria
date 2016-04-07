@@ -51,7 +51,7 @@ public class LivroBoundary {
 	private JLabel lblMargemLucro;
 	private JLabel lblQtdeEmEstoque;
 	
-	private JPanel contentPane;
+	//private JPanel contentPane;
 	private JTextField txtTituloLivro;
 	private JTextField txtISBN;
 	private JTextField txtNomeAutor;
@@ -310,7 +310,7 @@ bntSalvar.addActionListener(evtSalvar);
 		 * Adicionar evento ao botão salvar
 		 */
 
-		LivroEvBtnSalvar evtSalvar = new LivroEvBtnSalvar(this, txtTituloLivro, txtISBN, txtNomeAutor,
+		/*LivroEvBtnSalvar evtSalvar = new LivroEvBtnSalvar(this, txtTituloLivro, txtISBN, txtNomeAutor,
 				txtDataPublicacao, txtEditora, txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo,
 				txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque);
 		bntSalvar.addActionListener(evtSalvar);

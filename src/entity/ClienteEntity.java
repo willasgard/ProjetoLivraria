@@ -91,6 +91,13 @@ public class ClienteEntity extends EnderecoEntity{
 	}
 
 
+	@Override
+	public String toString() {
+		return "ClienteEntity [CodCliente=" + CodCliente + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", sexo="
+				+ sexo + ", email=" + email + ", telefone=" + telefone + ", celular=" + celular + "]";
+	}
+
+
 
 	
 	
