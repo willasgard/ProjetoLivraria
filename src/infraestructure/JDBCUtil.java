@@ -9,8 +9,8 @@ public class JDBCUtil {
 
 	private static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	private static String JDBC_URL = "jdbc:mysql://mysql.asgardprint.com.br/asgardprint01";
-	private static String JDBC_USER = "asgardprint01";
-	private static String JDBC_PASSWORD = "fatec2016";
+	private static String JDBC_USER = "****";
+	private static String JDBC_PASSWORD = "****";
 	private static Driver driver = null;
 
 	public static synchronized Connection getConnection() throws SQLException {

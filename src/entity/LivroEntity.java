@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.swing.ImageIcon;
 
 public class LivroEntity {
+	
+	private int id;
 
 	private int isbn;
 	private String tituloLivro;
@@ -170,10 +172,24 @@ public class LivroEntity {
 
 	@Override
 	public String toString() {
-		return "isbn= " + isbn + "\nTitulo do Livro: " + tituloLivro + "" + "\nNome do Autor: " + nomeAutor
-				+ "\nCategoria: " + categoriaLivro + "\nEditora:" + editora + "\nData da Publicacao: " + dataPublicacao
-				+ "\nFormato: " + formato + "\nNumero de Paginas: " + numeroPaginas + "\nSumario: " + sumario
-				+ "\nResumo: " + resumo;
+		return "isbn= " + isbn + 
+				"\nTitulo do Livro: " + tituloLivro + ""
+				+ "\nNome do Autor: " + nomeAutor
+				+ "\nCategoria: " + categoriaLivro 
+				+ "\nEditora:" + editora 
+				+ "\nData da Publicacao: " + dataPublicacao
+				+ "\nFormato: " + formato 
+				+ "\nNumero de Paginas: " + numeroPaginas 
+				+ "\nSumario: " + sumario 
+				+ "\nResumo: " + resumo; 
+		
 	}
-
 }
+	
+	
+//	
+//		return "isbn= " + isbn + "\nTitulo do Livro: " + tituloLivro + "" + "\nNome do Autor: " + nomeAutor
+//				+ "\nCategoria: " + categoriaLivro + "\nEditora:" + editora + "\nData da Publicacao: " + dataPublicacao
+//				+ "\nFormato: " + formato + "\nNumero de Paginas: " + numeroPaginas + "\nSumario: " + sumario
+//				+ "\nResumo: " + resumo;
+		
