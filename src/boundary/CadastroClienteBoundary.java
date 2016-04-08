@@ -22,6 +22,11 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 import control.EvBtnClienteConcluirCad;
+import control.evComboboxCidade;
+import control.evComboboxUF;
+import entity.CidadeEntity;
+import entity.EnderecoEntity;
+import entity.UfEntity;
 
 
 public class CadastroClienteBoundary {
@@ -34,8 +39,8 @@ public class CadastroClienteBoundary {
 	JTextField numero;
 	JTextField complemento;
 	JTextField bairro;
-	JComboBox cbUf;
-	JTextField cidade;
+	JComboBox <UfEntity>cbUf;
+	JComboBox <CidadeEntity>cbCidade;
 	JTextField email;
 	JTextField telefone;
 	JTextField celular;
@@ -129,30 +134,23 @@ public class CadastroClienteBoundary {
 		
 		lblUf = new JLabel("*UF");
 		panelCentro.add(lblUf);
-		cbUf = new JComboBox();
-		Vector UF = new Vector();
+		cbUf = new JComboBox<UfEntity>();
 		
-		UF.add("");
-		UF.add("SP");
-		UF.add("RJ");
-		UF.add("MG");
-		UF.add("BA");
-		UF.add("MT");
+		evComboboxUF comboUf = new evComboboxUF(cbUf);
 		
-		
-		for (int i=0;i<UF.size();i++){
-			cbUf.addItem(UF.get(i));
-		}
-		
-		
+		comboUf.listaUF();
+		cbUf.setSelectedIndex(25);
 		panelCentro.add(cbUf);
-
 		
 		lblCidade = new JLabel("*Cidade: ");
 		panelCentro.add(lblCidade);
-		cidade = new JTextField(30);
-		panelCentro.add(cidade);
+		cbCidade = new JComboBox<CidadeEntity>();
+		
+		evComboboxCidade comboCidade= new evComboboxCidade (cbCidade);
 
+		panelCentro.add(cbCidade);
+		
+		
 		
 		
 		
@@ -222,16 +220,16 @@ public class CadastroClienteBoundary {
 		PanelSul.add(btnCadastrar, BorderLayout.EAST);
 		btnCadastrar.setBackground(Color.GREEN);
 		btnCadastrar.setForeground(Color.WHITE);
-		
-		EvBtnClienteConcluirCad btnCadController = 
-				new EvBtnClienteConcluirCad(nome, cpf, rg, cep,
-						logradouro, numero, complemento,
-						bairro, cbUf, cidade, email, 
-						telefone, celular, btnCadastrar);
-						
-						
-		btnCadastrar.addActionListener(btnCadController);
-		
+//	
+//	EvBtnClienteConcluirCad btnCadController = 
+//			new EvBtnClienteConcluirCad(nome, cpf, rg, cep,
+//					logradouro, numero, complemento,
+//					bairro, cbUf, cidade, email, 
+//					telefone, celular, btnCadastrar);
+//					
+//					
+//	btnCadastrar.addActionListener(btnCadController);
+//	
 		
 		return PanelSul;
 	}

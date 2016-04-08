@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import entity.ClienteEntity;
+import entity.EnderecoEntity;
 import infraestructure.CadastroClienteDAO;
 
 public class EvBtnClienteConcluirCad implements ActionListener {
@@ -30,14 +31,20 @@ public class EvBtnClienteConcluirCad implements ActionListener {
 	JTextField complemento;
 	JTextField bairro;
 	JComboBox cbUf;
-	JTextField cidade;
+	JComboBox<EnderecoEntity> cidade;
 	JTextField email;
 	JTextField telefone;
 	JTextField celular;
 	
 	JButton btnCadastrar;
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 	
-	
+	/*
 
 
 
@@ -120,7 +127,7 @@ public class EvBtnClienteConcluirCad implements ActionListener {
 
 	System.out.println("Passei aqui");
 	}
-
+*/
 
 
 
