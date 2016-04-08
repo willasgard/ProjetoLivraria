@@ -2,4 +2,4 @@
 .settings
 .classpath
 .project
-src/infraestructure/JDBCUtil.java
+/src/infraestructure/JDBCUtil.java
