@@ -264,7 +264,7 @@ public class PesquisaBoundary {
 	 public void mostraPesquisa(java.util.List<LivroEntity> listaLivro){
 		 JScrollPane spane = new JScrollPane();
 		 JPanel painel = new JPanel();
-		 GridLayout grid = new GridLayout(1, 1);
+		 GridLayout grid = new GridLayout(1, 1, 10,10);
 		 painel.setLayout(grid);
 		 spane.setViewportView(painel);
 		 for(LivroEntity l: listaLivro){
