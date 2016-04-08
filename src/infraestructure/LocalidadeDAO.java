@@ -53,7 +53,7 @@ public class LocalidadeDAO {
 		
 	}
 	
-	public List<CidadeEntity> ConsultaCidade(String ufSelecionado) throws SQLException{
+	public List<CidadeEntity> ConsultaCidade(int ufSelecionado) throws SQLException{
 		
 		
 		
@@ -64,7 +64,7 @@ public class LocalidadeDAO {
 		
 		
 		
-		String sql = "SELECT id, nome, estado from cidade where estado "+ufSelecionado;
+		String sql = "SELECT id, nome, estado from cidade where estado ="+ufSelecionado;
 		PreparedStatement ps = con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()){

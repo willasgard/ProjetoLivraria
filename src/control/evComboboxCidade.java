@@ -16,11 +16,12 @@ public class evComboboxCidade {
 		this.cbCidade = cbCidade;
 	}
 	
-	public void listaCidade(){
+	public void listaCidade(int ufSelecionado){
 		try {
 			LocalidadeDAO cidadeDao = new LocalidadeDAO();
 			
-			String ufSelecionado = cbCidade.getSelectedItem().toString();
+			
+			
 			List<CidadeEntity> listCidade = cidadeDao.ConsultaCidade(ufSelecionado);
 			
 			if(cbCidade.getItemCount()>0){

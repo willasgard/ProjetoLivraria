@@ -8,6 +8,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.PageAttributes;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -44,6 +46,7 @@ public class CadastroClienteBoundary {
 	JTextField email;
 	JTextField telefone;
 	JTextField celular;
+	String ufSelecionado;
 	
 	public CadastroClienteBoundary() {
 		// TODO Auto-generated constructor stub
@@ -142,12 +145,47 @@ public class CadastroClienteBoundary {
 		cbUf.setSelectedIndex(25);
 		panelCentro.add(cbUf);
 		
+		
 		lblCidade = new JLabel("*Cidade: ");
 		panelCentro.add(lblCidade);
 		cbCidade = new JComboBox<CidadeEntity>();
 		
 		evComboboxCidade comboCidade= new evComboboxCidade (cbCidade);
 
+		comboCidade.listaCidade(cbUf.getSelectedIndex()+1);
+		
+		cbCidade.setSelectedIndex(564);
+		
+		ActionListener comboboxUfcidade = new ActionListener() {
+			
+			
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+				//String ufSelecionado = ;
+				int ufSelecionado = cbUf.getSelectedIndex()+1;
+				comboCidade.listaCidade(ufSelecionado);
+				
+				
+			}
+		};
+		cbUf.addActionListener(comboboxUfcidade);
+		
+		ActionListener comboCity = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println(cbCidade.getSelectedIndex()+1);
+				
+			}
+		};
+		
+		cbCidade.addActionListener(comboCity);
+		
+		
 		panelCentro.add(cbCidade);
 		
 		
