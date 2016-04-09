@@ -3,8 +3,11 @@ package boundary;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.ComponentOrientation;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.PageAttributes;
 import java.awt.Panel;
@@ -89,17 +92,23 @@ public class CadastroClienteBoundary {
 	public JComponent Centro(){
 		JPanel panelCentro = new JPanel(new GridLayout(14,1,10,10));
 		
+		
+		
 		panelCentro.setBackground(Color.WHITE);
 		
 		
 		lblNome = new JLabel("*Nome Completo: ");
 		panelCentro.add(lblNome);
 		nome = new JTextField(30);
+		
 		panelCentro.add(nome);
 		
 		lblCPF = new JLabel("*CPF: ");
 		panelCentro.add(lblCPF);
-		cpf = new JTextField(10);
+		
+		cpf = new JTextField();
+		cpf.setPreferredSize(new Dimension(5,2));
+//		cpf.setMinimumSize(new Dimension(1,2));
 		panelCentro.add(cpf);
 		
 		lblRg = new JLabel("*RG: ");
