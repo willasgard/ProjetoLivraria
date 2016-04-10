@@ -8,9 +8,9 @@ import java.sql.SQLException;
 public class JDBCUtil {
 
 	private static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	private static String JDBC_URL = "jdbc:mysql://localhost/asgardprint01";
-	private static String JDBC_USER = "root";
-	private static String JDBC_PASSWORD = "ads2016";
+	private static String JDBC_URL = "jdbc:mysql://mysql.asgardprint01/asgardprint01";
+	private static String JDBC_USER = "asgardprint01";
+	private static String JDBC_PASSWORD = "******";
 	private static Driver driver = null;
 
 	public static synchronized Connection getConnection() throws SQLException {
