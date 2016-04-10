@@ -32,6 +32,7 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 import com.mysql.fabric.xmlrpc.base.Array;
+import com.sun.corba.se.spi.orbutil.fsm.Action;
 
 import control.EvBtnClienteConcluirCad;
 
@@ -56,6 +57,9 @@ public class CadastroClienteBoundary {
 	JTextField telefone;
 	JTextField celular;
 	JTextField numero;
+	JPasswordField senha;
+	JComboBox cbSexo;
+	String sexo;
 	
 	
 	
@@ -216,7 +220,7 @@ public class CadastroClienteBoundary {
 		
 		JLabel lblSexo = new JLabel("*Sexo");
 		panelCentro.add(lblSexo);
-		JComboBox cbSexo = new JComboBox();
+		cbSexo = new JComboBox();
 		Vector Sexo = new Vector();
 		Sexo.add("");
 		Sexo.add("Masculino");
@@ -226,17 +230,32 @@ public class CadastroClienteBoundary {
 			cbSexo.addItem(Sexo.get(i));
 			
 		}
-		
-		
-		
-		
+			
 		panelCentro.add(cbSexo);
+		
+		ActionListener recebeSexo = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				sexo =(String) cbSexo.getSelectedItem();
+				
+				
+			}
+		};
+		cbSexo.addActionListener(recebeSexo);
+		
 		
 		lblEmail = new JLabel("*Email: ");
 		panelCentro.add(lblEmail);
 		email = new JTextField(30);
 		panelCentro.add(email);
 		
+
+		JLabel lblSenha = new JLabel("Senha: ");
+		panelCentro.add(lblSenha);
+		senha = new JPasswordField();
+		panelCentro.add(senha);
 		
 		lblTelefone = new JLabel("*Telefone: ");
 		panelCentro.add(lblTelefone);
@@ -250,10 +269,6 @@ public class CadastroClienteBoundary {
 		
 	
 
-		JLabel lblSenha = new JLabel("Senha: ");
-		panelCentro.add(lblSenha);
-		JPasswordField senha = new JPasswordField();
-		panelCentro.add(senha);
 		
 
 		
@@ -284,16 +299,13 @@ public class CadastroClienteBoundary {
 		PanelSul.add(btnCadastrar, BorderLayout.EAST);
 		btnCadastrar.setBackground(Color.GREEN);
 		btnCadastrar.setForeground(Color.WHITE);
-//	
-//	EvBtnClienteConcluirCad btnCadController = 
-//			new EvBtnClienteConcluirCad(nome, cpf, rg, cep,
-//					logradouro, numero, complemento,
-//					bairro, cbUf, cidade, email, 
-//					telefone, celular, btnCadastrar);
-//					
-//					
-//	btnCadastrar.addActionListener(btnCadController);
-//	
+
+	EvBtnClienteConcluirCad btnCadController = 
+			new EvBtnClienteConcluirCad(nome, cpf, rg, cep, complemento, logradouro, bairro, uf, cidade, email, telefone, celular, numero, senha, btnCadastrar, cbSexo, sexo);
+					
+					
+	btnCadastrar.addActionListener(btnCadController);
+	
 		
 		return PanelSul;
 	}
