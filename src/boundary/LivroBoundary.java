@@ -274,13 +274,13 @@ bntSalvar.addActionListener(evtSalvar);
 		bntDeletar.setBounds(333, 430, 125, 37);
 		contentPane.add(bntDeletar);
 
-		bntPesquisarLivro = new JButton("");
+		/*bntPesquisarLivro = new JButton("");
 		bntPesquisarLivro.setBounds(454, 11, 37, 24);
 		bntPesquisarLivro.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/_____")));
-		contentPane.add(bntPesquisarLivro);
+		contentPane.add(bntPesquisarLivro);*/
 
-		bntPesquisarAutor = new JButton("");
-		bntPesquisarAutor.setBounds(455, 43, 37, 24);
+		//bntPesquisarAutor = new JButton("");
+		//bntPesquisarAutor.setBounds(455, 43, 37, 24);
 		//bntPesquisarAutor.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/_____")));
 		//contentPane.add(bntPesquisarAutor);*/
 
