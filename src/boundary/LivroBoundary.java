@@ -24,8 +24,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
+
+import control.EvBtnSalvarLivro;
 import control.LivroEvBtnAlterar;
 import control.LivroEvBtnDeletar;
+
 //import control.LivroEvBtnSalvar;
 import entity.LivroEntity;
 
@@ -52,27 +55,27 @@ public class LivroBoundary {
 	private JLabel lblQtdeEmEstoque;
 	
 	//private JPanel contentPane;
-	private JTextField txtTituloLivro;
-	private JTextField txtISBN;
-	private JTextField txtNomeAutor;
-	private JTextField txtDataPublicacao;
-	private JTextField txtEditora;
-	private JTextField txtCategoria;
-	private JTextField txtFormato;
-	private JTextField txtnumPaginas;
-	private JTextField txtSumario;
-	private JTextField txtResumo;
-	private JTextField txtPrecoCusto;
-	private JTextField txtPrecoVenda;
-	private JTextField txtMargemLucro;
-	private JTextField txtQtdeEmEstoque;
+	JTextField txtTituloLivro;
+	JTextField txtISBN;
+	JTextField txtNomeAutor;
+	JTextField txtDataPublicacao;
+	JTextField txtEditora;
+	JTextField txtCategoria;
+	JTextField txtFormato;
+	JTextField txtnumPaginas;
+	JTextField txtSumario;
+	JTextField txtResumo;
+	JTextField txtPrecoCusto;
+	JTextField txtPrecoVenda;
+	JTextField txtMargemLucro;
+	JTextField txtQtdeEmEstoque;
 
-	private JButton BtnVoltar;
-	private JButton bntPesquisarAutor;
-	private JButton bntPesquisarLivro;
-	private JButton bntDeletar;
-	private JButton bntAlterar;
-	private JButton bntSalvar;
+	JButton btnVoltar;
+	JButton bntPesquisarAutor;
+	JButton bntPesquisarLivro;
+	JButton bntDeletar;
+	JButton bntAlterar;
+	JButton bntSalvar;
 
 	public LivroEntity getLivroEntity() {
 		return livroEntity;
@@ -246,12 +249,17 @@ public class LivroBoundary {
 		txtQtdeEmEstoque.setText("");
 		contentPane.add(txtQtdeEmEstoque);
 		txtQtdeEmEstoque.setColumns(10);
+		
+		btnVoltar = new JButton("");
+		//BtnVoltar.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/________")));
+		btnVoltar.setBounds(449, 265, 43, 37);
+		//contentPane.add(BtnVoltar);*/
 
 		bntSalvar = new JButton("Salvar");
 		//bntSalvar.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/___")));
 		bntSalvar.setBounds(63, 430, 125, 37);
 		contentPane.add(bntSalvar);
-		LivroEvBtnSalvar evtSalvar = new LivroEvBtnSalvar();
+		EvBtnSalvarLivro evtSalvar = new EvBtnSalvarLivro(txtTituloLivro, txtISBN, txtNomeAutor, txtDataPublicacao, txtEditora, txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo, txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque, btnVoltar, bntPesquisarAutor, bntPesquisarLivro, bntDeletar, bntAlterar, bntSalvar);
 bntSalvar.addActionListener(evtSalvar);
 		
 		bntAlterar = new JButton("Alterar");
@@ -284,10 +292,7 @@ bntSalvar.addActionListener(evtSalvar);
 		//bntPesquisarAutor.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/_____")));
 		//contentPane.add(bntPesquisarAutor);*/
 
-		BtnVoltar = new JButton("");
-		//BtnVoltar.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/________")));
-		BtnVoltar.setBounds(449, 265, 43, 37);
-		//contentPane.add(BtnVoltar);*/
+
 		
 		
 		/*LivroEvBtnSalvar evtSalvar = new LivroEvBtnSalvar(this, txtTituloLivro, txtISBN, txtNomeAutor, txtDataPublicacao,
@@ -304,7 +309,7 @@ bntSalvar.addActionListener(evtSalvar);
 		
 		
 		
-		contentPane.add(BtnVoltar);
+		contentPane.add(btnVoltar);
 
 		/*
 		 * Adicionar evento ao botão salvar
@@ -346,7 +351,7 @@ bntSalvar.addActionListener(evtSalvar);
 
 		bntAlterar.setEnabled(false);
 		bntDeletar.setEnabled(false);
-		BtnVoltar.setEnabled(false);
+		btnVoltar.setEnabled(false);
 		bntSalvar.setEnabled(true);
 
 	}
@@ -359,71 +364,13 @@ bntSalvar.addActionListener(evtSalvar);
 
 		bntAlterar.setEnabled(true);
 		bntDeletar.setEnabled(true);
-		BtnVoltar.setEnabled(true);
+		btnVoltar.setEnabled(true);
 		bntSalvar.setEnabled(true);
 	}
 
-	public boolean validaCampos() {
-		if (txtISBN.getText().length() <= 0 || txtNomeAutor.getText().length() <= 0
-				|| txtDataPublicacao.getText().length() <= 0 || txtEditora.getText().length() <= 0
-				|| txtCategoria.getText().length() <= 0 || txtFormato.getText().length() <= 0
-				|| txtnumPaginas.getText().length() <= 0 || txtSumario.getText().length() <= 0
-				|| txtResumo.getText().length() <= 0 || txtPrecoCusto.getText().length() <= 0
-				|| txtPrecoVenda.getText().length() <= 0 || txtMargemLucro.getText().length() <= 0
-				|| txtQtdeEmEstoque.getText().length() <= 0) {
-			JOptionPane.showMessageDialog(null, "Preencher todos os campos");
-			return false;
-		}
-		return true;
-	}
+	
 
 	
-	public class LivroEvBtnSalvar implements ActionListener {
-		
-		
-		
-		public LivroEvBtnSalvar(){
-			
-		}
-		
-		public void salvar(){
-			LivroEntity livroEntity = new LivroEntity();
-			CadastroLivroDAO livroDAO = new CadastroLivroDAO();
-			
-			System.out.println("Primeiro");
-			livroEntity.setTituloLivro(txtTituloLivro.getText()); 
-			//livroEntity.setIsbn((int)txtISBN.getText());
-			livroEntity.setTituloLivro(txtNomeAutor.getText());
-			livroEntity.setTituloLivro(txtDataPublicacao.getText());
-			livroEntity.setTituloLivro(txtEditora.getText());
-			livroEntity.setTituloLivro(txtCategoria.getText());
-			livroEntity.setTituloLivro(txtFormato.getText());
-			livroEntity.setTituloLivro(txtnumPaginas.getText());
-			livroEntity.setTituloLivro(txtSumario.getText());
-			livroEntity.setTituloLivro(txtResumo.getText());
-			livroEntity.setTituloLivro(txtPrecoCusto.getText());
-			livroEntity.setTituloLivro(txtPrecoVenda.getText());
-			livroEntity.setTituloLivro(txtMargemLucro.getText());
-			livroEntity.setTituloLivro(txtQtdeEmEstoque.getText());
-			
-			try {
-				if (livroDAO.insert(livroEntity) > 0){
-					JOptionPane.showMessageDialog(null, "Cadastro do Livro Efetuado Com Sucesso");
-					telaDefault();
-				} else {
-					JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
-				}
-			} catch (Exception e){
-				JOptionPane.showMessageDialog(null, e.getMessage());
-			}
-		}
-		
-		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			if(validaCampos())
-			salvar();
-		}
-
-	}
+	
 
 }
