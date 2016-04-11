@@ -39,7 +39,7 @@ public class LivroBoundary {
 	private JFrame frame = new JFrame();
 	private JPanel contentPane = new JPanel(new BorderLayout());
 	
-	private JLabel lblTituloLivro;
+	private JLabel lblTitulo;
 	private JLabel lblISBN;
 	private JLabel lblNomeAutor;
 	private JLabel lblDataPublicacao;
@@ -55,7 +55,7 @@ public class LivroBoundary {
 	private JLabel lblQtdeEmEstoque;
 	
 	//private JPanel contentPane;
-	JTextField txtTituloLivro;
+	JTextField txtTitulo;
 	JTextField txtISBN;
 	JTextField txtNomeAutor;
 	JTextField txtDataPublicacao;
@@ -93,193 +93,213 @@ public class LivroBoundary {
 	public LivroBoundary() {
 
 		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-		frame.setBounds(100, 100, 600, 580);
+		frame.setBounds(100, 100, 500, 550);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		frame.setContentPane(contentPane);
 		frame.setLocationRelativeTo(null);
-		frame.setTitle("Cadastro de Livros.");
+		frame.setTitle("Cadastro de Livros");
 		contentPane.setLayout(null);
+		
 		
 		lblISBN = new JLabel("ISBN: ");
 		lblISBN.setBounds(2, 10, 111, 20);
 		contentPane.add(lblISBN);
 		
-
 		txtISBN = new JTextField();
-		txtISBN.setBounds(111, 10, 337, 20);
+		txtISBN.setBounds(111, 10, 130, 20);
 		txtISBN.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtISBN.setText("");
 		txtISBN.setColumns(10);
 		contentPane.add(txtISBN);
 		
+
+		lblTitulo = new JLabel("Título: ");
+		lblTitulo.setBounds(2, 40, 111, 20);
+		contentPane.add(lblTitulo);
+		
+		txtTitulo = new JTextField();
+		txtTitulo.setBounds(111, 40, 337, 20);
+		txtTitulo.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		txtTitulo.setText("");
+		txtTitulo.setColumns(10);
+		contentPane.add(txtTitulo);
+				
+		
 		lblNomeAutor = new JLabel("Nome do Autor: ");
-		lblNomeAutor.setBounds(2, 40, 111, 20);
+		lblNomeAutor.setBounds(2, 70, 111, 20);
 		contentPane.add(lblNomeAutor);
 		
-
 		txtNomeAutor = new JTextField();
-		txtNomeAutor.setBounds(111, 40, 337, 20);
+		txtNomeAutor.setBounds(111, 70, 337, 20);
 		txtNomeAutor.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtNomeAutor.setText("");
 		contentPane.add(txtNomeAutor);
 		txtNomeAutor.setColumns(10);
 		
+		
 		lblDataPublicacao = new JLabel("Data Publicação: ");
-		lblDataPublicacao.setBounds(2, 70, 111, 20);
+		lblDataPublicacao.setBounds(2, 100, 111, 20);
 		contentPane.add(lblDataPublicacao);
 		
-
 		txtDataPublicacao = new JTextField();
-		txtDataPublicacao.setBounds(111, 70, 337, 20);
+		txtDataPublicacao.setBounds(111, 100, 337, 20);
 		txtDataPublicacao.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtDataPublicacao.setText("");
 		contentPane.add(txtDataPublicacao);
 		txtDataPublicacao.setColumns(10);
 		
+		
 		lblEditora = new JLabel("Editora: ");
-		lblEditora.setBounds(2, 100, 111, 20);
+		lblEditora.setBounds(2, 130, 111, 20);
 		contentPane.add(lblEditora);
 
 		txtEditora = new JTextField();
-		txtEditora.setBounds(111, 100, 337, 20);
+		txtEditora.setBounds(111, 130, 337, 20);
 		txtEditora.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtEditora.setText("");
 		contentPane.add(txtEditora);
 		txtEditora.setColumns(10);
 		
+		
 		lblCategoria = new JLabel("Categoria: ");
-		lblCategoria.setBounds(2, 130, 111, 20);
+		lblCategoria.setBounds(2, 160, 111, 20);
 		contentPane.add(lblCategoria);
 		
 
 		txtCategoria = new JTextField();
-		txtCategoria.setBounds(111, 130, 337, 20);
+		txtCategoria.setBounds(111, 160, 337, 20);
 		txtCategoria.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtCategoria.setText("");
 		contentPane.add(txtCategoria);
 		txtCategoria.setColumns(10);
 		
+		
 		lblFormato = new JLabel("Formato: ");
-		lblFormato.setBounds(2, 160, 111, 20);
+		lblFormato.setBounds(2, 190, 111, 20);
 		contentPane.add(lblFormato);
 		
-
 		txtFormato = new JTextField();
-		txtFormato.setBounds(111, 160, 337, 20);
+		txtFormato.setBounds(111, 190, 337, 20);
 		txtFormato.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtFormato.setText("");
 		contentPane.add(txtFormato);
 		txtFormato.setColumns(10);
 		
+		
 		lblnumPaginas = new JLabel("Numero de Pags: ");
-		lblnumPaginas.setBounds(2, 190, 111, 20);
+		lblnumPaginas.setBounds(2, 220, 111, 20);
 		contentPane.add(lblnumPaginas);
 
 		txtnumPaginas = new JTextField();
-		txtnumPaginas.setBounds(111, 190, 337, 20);
+		txtnumPaginas.setBounds(111, 220, 337, 20);
 		txtnumPaginas.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtnumPaginas.setText("");
 		contentPane.add(txtnumPaginas);
 		txtnumPaginas.setColumns(10);
 		
+		
 		lblSumario = new JLabel("Sumario: ");
-		lblSumario.setBounds(2, 220, 111, 20);
+		lblSumario.setBounds(2, 250, 111, 20);
 		contentPane.add(lblSumario);
 
 		txtSumario = new JTextField();
-		txtSumario.setBounds(111, 220, 337, 20);
+		txtSumario.setBounds(111, 250, 337, 20);
 		txtSumario.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtSumario.setText("");
 		contentPane.add(txtSumario);
 		txtSumario.setColumns(10);
 		
-		lblResumo = new JLabel("Resumo: ");
-		lblResumo.setBounds(2, 250, 111, 20);
-		contentPane.add(lblResumo);
 		
+		lblResumo = new JLabel("Resumo: ");
+		lblResumo.setBounds(2, 280, 111, 20);
+		contentPane.add(lblResumo);
 
 		txtResumo = new JTextField();
-		txtResumo.setBounds(111, 250, 337, 20);
+		txtResumo.setBounds(111, 280, 337, 20);
 		txtResumo.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtResumo.setText("");
 		contentPane.add(txtResumo);
 		txtResumo.setColumns(10);
 		
+		
 		lblPrecoCusto = new JLabel("Preco de Custo: ");
-		lblPrecoCusto.setBounds(2, 280, 111, 20);
+		lblPrecoCusto.setBounds(2, 310, 111, 20);
 		contentPane.add(lblPrecoCusto);
 		
 		txtPrecoCusto = new JTextField();
-		txtPrecoCusto.setBounds(111, 280, 337, 20);
+		txtPrecoCusto.setBounds(111, 310, 337, 20);
 		txtPrecoCusto.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtPrecoCusto.setText("");
 		contentPane.add(txtPrecoCusto);
 		txtPrecoCusto.setColumns(10);
 		
+		
 		lblPrecoVenda = new JLabel("Preco de Venda: ");
-		lblPrecoVenda.setBounds(2, 310, 280, 20);
+		lblPrecoVenda.setBounds(2, 340, 111, 20);
 		contentPane.add(lblPrecoVenda);
 		
 		txtPrecoVenda = new JTextField();
-		txtPrecoVenda.setBounds(111, 310, 337, 20);
+		txtPrecoVenda.setBounds(111, 340, 337, 20);
 		txtPrecoVenda.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtPrecoVenda.setText("");
 		contentPane.add(txtPrecoVenda);
 		txtPrecoVenda.setColumns(10);
+
 		
 		lblMargemLucro = new JLabel("Margem de Lucro: ");
-		lblMargemLucro.setBounds(2, 330, 330, 20);
+		lblMargemLucro.setBounds(2, 370, 111, 20);
 		contentPane.add(lblMargemLucro);
 		
 		txtMargemLucro = new JTextField();
-		txtMargemLucro.setBounds(111, 330, 337, 20);
+		txtMargemLucro.setBounds(111, 370, 337, 20);
 		txtMargemLucro.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtMargemLucro.setText("");
 		contentPane.add(txtMargemLucro);
 		txtMargemLucro.setColumns(10);
 		
+		
 		lblQtdeEmEstoque = new JLabel("Qtde em Estoque: ");
-		lblQtdeEmEstoque.setBounds(2, 360, 310, 20);
+		lblQtdeEmEstoque.setBounds(2, 400, 310, 20);
 		contentPane.add(lblQtdeEmEstoque);
 		
 		txtQtdeEmEstoque = new JTextField();
-		txtQtdeEmEstoque.setBounds(111, 360, 337, 20);
+		txtQtdeEmEstoque.setBounds(111, 400, 337, 20);
 		txtQtdeEmEstoque.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		txtQtdeEmEstoque.setText("");
 		contentPane.add(txtQtdeEmEstoque);
 		txtQtdeEmEstoque.setColumns(10);
 		
-		btnVoltar = new JButton("");
+		//btnVoltar = new JButton("");
 		//BtnVoltar.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/________")));
-		btnVoltar.setBounds(449, 265, 43, 37);
+		//btnVoltar.setBounds(449, 265, 43, 37);
 		//contentPane.add(BtnVoltar);*/
 
 		bntSalvar = new JButton("Salvar");
 		//bntSalvar.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/___")));
-		bntSalvar.setBounds(63, 430, 125, 37);
+		bntSalvar.setBounds(63, 450, 125, 37);
 		contentPane.add(bntSalvar);
-		EvBtnSalvarLivro evtSalvar = new EvBtnSalvarLivro(txtTituloLivro, txtISBN, txtNomeAutor, txtDataPublicacao, txtEditora, txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo, txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque, btnVoltar, bntPesquisarAutor, bntPesquisarLivro, bntDeletar, bntAlterar, bntSalvar);
-bntSalvar.addActionListener(evtSalvar);
+		EvBtnSalvarLivro evtSalvar = new EvBtnSalvarLivro(txtTitulo, txtISBN, txtNomeAutor, txtDataPublicacao, txtEditora, txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo, txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque, btnVoltar, bntPesquisarAutor, bntPesquisarLivro, bntDeletar, bntAlterar, bntSalvar);
+		bntSalvar.addActionListener(evtSalvar);
 		
 		bntAlterar = new JButton("Alterar");
 		//bntAlterar.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/_____")));
-		bntAlterar.setBounds(198, 430, 125, 37);
+		bntAlterar.setBounds(198, 450, 125, 37);
 		//contentPane.add(bntAlterar);
 		
 		bntDeletar = new JButton("Deletar");
-		bntDeletar.setBounds(333, 430, 125, 37);
+		bntDeletar.setBounds(333, 450, 125, 37);
 		//contentPane.add(bntDeletar);
 		
-		bntPesquisarLivro = new JButton("");
-		bntPesquisarLivro.setBounds(454, 11, 37, 24);
+		//bntPesquisarLivro = new JButton("");
+		//bntPesquisarLivro.setBounds(454, 11, 37, 24);
 		//bntPesquisarLivro.setIcon(new ImageIcon(LivroBoundary.class.getResource("/resource/_____")));
 		//contentPane.add(bntPesquisarLivro);*/
 		
 		contentPane.add(bntAlterar);
 
 		bntDeletar = new JButton("Deletar");
-		bntDeletar.setBounds(333, 430, 125, 37);
+		bntDeletar.setBounds(333, 450, 125, 37);
 		contentPane.add(bntDeletar);
 
 		/*bntPesquisarLivro = new JButton("");
@@ -302,14 +322,14 @@ bntSalvar.addActionListener(evtSalvar);
 		
 		
 		
-		LivroEvBtnAlterar evtAlterar = new LivroEvBtnAlterar(this, txtTituloLivro, txtISBN, txtNomeAutor, txtDataPublicacao, txtEditora,
+		LivroEvBtnAlterar evtAlterar = new LivroEvBtnAlterar(this, txtTitulo, txtISBN, txtNomeAutor, txtDataPublicacao, txtEditora,
 															txtCategoria, txtFormato, txtnumPaginas, txtSumario, txtResumo, 
 															txtPrecoCusto, txtPrecoVenda, txtMargemLucro, txtQtdeEmEstoque);
 		bntAlterar.addActionListener(evtAlterar);		
 		
 		
 		
-		contentPane.add(btnVoltar);
+		//contentPane.add(btnVoltar);
 
 		/*
 		 * Adicionar evento ao botão salvar
@@ -336,6 +356,7 @@ bntSalvar.addActionListener(evtSalvar);
 	public void telaDefault() {
 
 		txtISBN.setText("");
+		txtTitulo.setText("");
 		txtNomeAutor.setText("");
 		txtDataPublicacao.setText("");
 		txtEditora.setText("");
@@ -351,7 +372,7 @@ bntSalvar.addActionListener(evtSalvar);
 
 		bntAlterar.setEnabled(false);
 		bntDeletar.setEnabled(false);
-		btnVoltar.setEnabled(false);
+		//btnVoltar.setEnabled(false);
 		bntSalvar.setEnabled(true);
 
 	}
@@ -364,7 +385,7 @@ bntSalvar.addActionListener(evtSalvar);
 
 		bntAlterar.setEnabled(true);
 		bntDeletar.setEnabled(true);
-		btnVoltar.setEnabled(true);
+		//btnVoltar.setEnabled(true);
 		bntSalvar.setEnabled(true);
 	}
 

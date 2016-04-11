@@ -121,8 +121,8 @@ public class EvBtnSalvarLivro implements ActionListener{
 		livroEntity.setQtdeEmEstoque(Integer.parseInt(txtQtdeEmEstoque.getText()));
 		
 		try {
-			livroDAO = new CadastroLivroDAO();
-			if (livroDAO.insert(livroEntity) > 0){
+			 livroDAO = new CadastroLivroDAO();
+			if (livroDAO.insert(livroEntity) >= 0){
 				JOptionPane.showMessageDialog(null, "Cadastro do Livro Efetuado Com Sucesso");
 				
 			} else {

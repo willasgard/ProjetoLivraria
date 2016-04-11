@@ -9,7 +9,7 @@ import entity.LivroEntity;
 public class CadastroLivroDAO {
 	
 	public long insert(LivroEntity livro) throws SQLException{
-		long idGerado = 0;
+		long idGerado = -1;
 		try {
 
 			Connection con = JDBCUtil.getConnection();
@@ -33,18 +33,13 @@ public class CadastroLivroDAO {
 			stmt.setString(12, livro.getResumo());
 			stmt.setString(13,livro.getSumario());
 			stmt.setString(14,livro.getTituloLivro());
-			
-			
-
-			
-			
-			
+					
 
 			stmt.execute();
 			stmt.close();
-			//ResultSet r = stmt.getGeneratedKeys();
-			//r.next();
-			//idGerado = r.getLong(1);
+			ResultSet r = stmt.getGeneratedKeys();
+			r.next();
+			idGerado = r.getLong(1);
 
 			JDBCUtil.close(con);
 		} catch (Exception e) {
